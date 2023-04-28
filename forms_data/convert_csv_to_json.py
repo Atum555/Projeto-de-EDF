@@ -47,8 +47,8 @@ def main():
     data_answers = get_data_answers(data_raw)    
 
     ## Continue Here
-
     
+
 
     with open(json_file, 'w') as file:
         json.dump(data_raw, file, indent=4, ensure_ascii=False)
