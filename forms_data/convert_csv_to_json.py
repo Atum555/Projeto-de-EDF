@@ -4,36 +4,43 @@ import csv
 import json
 import sys
 
-csv_file = sys.argv[1]
-json_file = sys.argv[2]
 
-# Open the CSV file and read its contents
-with open(csv_file, 'r', encoding='windows-1252') as file:
-    reader = csv.DictReader(file, delimiter=';')
+def main():
+    csv_file = sys.argv[1]
+    json_file = sys.argv[2]
 
-    # Create an empty list to store the JSON objects
-    data = []
+    with open(csv_file, 'r') as file:
+        reader = csv.DictReader(file, delimiter=',')
+        data_raw = []
+        for row in reader:
+            # Convert the row to a JSON object and add it to the list
+            data_raw.append(json.loads(json.dumps(row)))
 
-    # Iterate over each line in the CSV file
-    for row in reader:
-        # Convert the row to a JSON object and add it to the list
-        data.append(json.loads(json.dumps(row)))
+    data_questions = []
+    for i in data_raw[0]:
+        data_questions.append(i)
+    for i in data_raw:
+        count = 0
+        for j in i:
+            if j != data_questions[count]:
+                print("Questions don't match!")
+                exit(1)
+            count += 1
 
+    data_answers = []
+    for i in range(len(data_raw)):
+        temp = []
+        for j in data_raw[i]:
+            temp.append(data_raw[i][j])
+        data_answers.append(temp)
 
-# Array of objects
-clean_data = []
-for i in range(len(data)):
-    # Obejects
-    temp = []
-    for j in data[i]:
-        # Key
-        temp.append(data[i][j])
-        # Value
-    clean_data.append(temp)
+    ## Continue Here
 
+    with open(json_file, 'w') as file:
+        json.dump(data_raw, file, indent=4, ensure_ascii=False)
 
-with open(json_file, 'w') as file:
-    json.dump(clean_data, file, indent=4)
+    for x in range(len(data_answers)):
+        print(len(data_answers[x]))
 
-for x in range(len(clean_data)):
-    print(len(clean_data[x]))
+if __name__ == "__main__":
+    main()

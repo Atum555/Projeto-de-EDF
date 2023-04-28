@@ -10,7 +10,7 @@ class _Graph {
         ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Draw Graph
-
+        
     }
 }
 
