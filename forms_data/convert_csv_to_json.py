@@ -36,8 +36,6 @@ def get_data_answers(data_raw):
         data_answers.append(temp)
     return data_answers
 
-    
-
 
 def main():
     json_file = sys.argv[2]
@@ -47,14 +45,13 @@ def main():
     data_answers = get_data_answers(data_raw)    
 
     ## Continue Here
-    
-
+    obj = {
+        "questions": data_questions, 
+        "answers": data_answers
+        }
 
     with open(json_file, 'w') as file:
-        json.dump(data_raw, file, indent=4, ensure_ascii=False)
-
-    for x in range(len(data_answers)):
-        print(len(data_answers[x]))
+        json.dump(obj, file, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
     main()
