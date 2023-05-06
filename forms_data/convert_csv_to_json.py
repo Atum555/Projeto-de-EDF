@@ -4,36 +4,54 @@ import csv
 import json
 import sys
 
-csv_file = sys.argv[1]
-json_file = sys.argv[2]
+def get_raw_data():
+    csv_file = sys.argv[1]
+    with open(csv_file, 'r') as file:
+        reader = csv.DictReader(file, delimiter=',')
+        data_raw = []
+        for row in reader:
+            # Convert the row to a JSON object and add it to the list
+            data_raw.append(json.loads(json.dumps(row)))
+    return data_raw
 
-# Open the CSV file and read its contents
-with open(csv_file, 'r', encoding='windows-1252') as file:
-    reader = csv.DictReader(file, delimiter=';')
+def get_data_questions(data_raw):
+    data_questions = []
+    for i in data_raw[0]:
+        data_questions.append(i)
+    for i in data_raw:
+        count = 0
+        for j in i:
+            if j != data_questions[count]:
+                print("Questions don't match!")
+                exit(1)
+            count += 1
+    return data_questions
 
-    # Create an empty list to store the JSON objects
-    data = []
-
-    # Iterate over each line in the CSV file
-    for row in reader:
-        # Convert the row to a JSON object and add it to the list
-        data.append(json.loads(json.dumps(row)))
-
-
-# Array of objects
-clean_data = []
-for i in range(len(data)):
-    # Obejects
-    temp = []
-    for j in data[i]:
-        # Key
-        temp.append(data[i][j])
-        # Value
-    clean_data.append(temp)
+def get_data_answers(data_raw):
+    data_answers = []
+    for i in range(len(data_raw)):
+        temp = []
+        for j in data_raw[i]:
+            temp.append(data_raw[i][j])
+        data_answers.append(temp)
+    return data_answers
 
 
-with open(json_file, 'w') as file:
-    json.dump(clean_data, file, indent=4)
+def main():
+    json_file = sys.argv[2]
 
-for x in range(len(clean_data)):
-    print(len(clean_data[x]))
+    data_raw = get_raw_data()
+    data_questions = get_data_questions(data_raw)
+    data_answers = get_data_answers(data_raw)    
+
+    ## Continue Here
+    obj = {
+        "questions": data_questions, 
+        "answers": data_answers
+        }
+
+    with open(json_file, 'w') as file:
+        json.dump(obj, file, indent=4, ensure_ascii=False)
+
+if __name__ == "__main__":
+    main()
