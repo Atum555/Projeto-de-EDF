@@ -18,14 +18,16 @@
             background-color: #001629;
         }
     </style>
+    <script src="dataHandler.js"></script>
     <script src="test_01.js"></script>
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 </head>
 <body>
     <div>
-        <select id="_graph_select" name="_graph_select" onchange="onGraphSelectChange()" style="width: 20em;"></select>
+        <select id="_single_graph_select" name="_graph_select" onchange="onSingleGraphSelectChange()" style="width: 20em;">
+        <option value="null">Escolhe a pergunta...</option>
+        </select>
     </div>
-    <div id="_graph_container" style="height: 300px; width: 100%;">
-    olaaa</div>
+    <div id="_single_graph_container" style="height: 300px; width: 100%;"></div>
 </body>
 </html>

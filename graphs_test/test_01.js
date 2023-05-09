@@ -1,68 +1,54 @@
-window.onload = () => {
-    let _graph = new CanvasJS.Chart("_graph_container", {
-        animationEnabled: true,
-        theme: "light2", // "light1", "light2", "dark1", "dark2"
-        title:{
-            text: "Top Oil Reserves"
-        },
-        axisY: {
-            title: "Reserves(MMbbl)"
-        },
-        data: [{        
-            type: "column",  
-            showInLegend: true, 
-            legendMarkerColor: "grey",
-            legendText: "MMbbl = one million barrels",
-            dataPoints: [      
-                { y: 300878, label: "Venezuela" },
-                { y: 266455,  label: "Saudi" },
-                { y: 169709,  label: "Canada" },
-                { y: 158400,  label: "Iran" },
-                { y: 142503,  label: "Iraq" },
-                { y: 101500, label: "Kuwait" },
-                { y: 97800,  label: "UAE" },
-                { y: 80000,  label: "Russia" }
-            ]
-        }]
-    });
-    _graph.render();
-};
-
-let _data;
-let _graph;
-
 // CHANGE GRAPH
-const onGraphSelectChange = (event) => {
-    console.log("it changed")
+const onSingleGraphSelectChange = () => {
+    const _q_index = document.getElementById("_single_graph_select").value;
+
+    switch (_dataHandler.getGraphInfo("single", _q_index)["type"]) {
+        case "Pie":
+            _graph = new CanvasJS.Chart("_single_graph_container", {
+                animationEnabled: true,
+                theme: "light2",
+                title:{
+                    text: _dataHandler.getGraphInfo("single", _q_index)["title"]
+                },
+                data: [{
+                    type: "doughnut",
+                    startAngle: -90,
+                    //innerRadius: 60,
+                    indexLabelFontSize: 17,
+                    indexLabel: "{label} - #percent%",
+                    toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                    dataPoints: _dataHandler.getDataPoints("single", _q_index)
+                }]
+            });
+            _graph.render();
+            break;
+        case "Bar":
+        default:
+            _graph = new CanvasJS.Chart("_single_graph_container", {
+                animationEnabled: true,
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                title:{
+                    text: _dataHandler.getGraphInfo("single", _q_index)["title"]
+                },
+                data: [{        
+                    type: "column",  
+                    dataPoints: _dataHandler.getDataPoints("single", _q_index)
+                }]
+            });
+            _graph.render();
+    }
 }
 
 // SETUP SITE WITH DATA
 const onDataLoaded = () => {
+    // ADD DATA TO _single_graph_select
     (function() {
-        const _select = document.getElementById("_graph_select");
-        for (let i = 5; i < _data["questions"].length; i++) {
+        const _select = document.getElementById("_single_graph_select");
+        for (let i = 0; i < _dataHandler.getQuestions().length; i++) {
             let _option = document.createElement("option");
             _option.value = i;
-            _option.innerHTML = _data["questions"][i];
+            _option.innerHTML = _dataHandler.getQuestions()[i];
             _select.appendChild(_option);
         }
-        const firstChild = _select.firstElementChild;
-        firstChild.classList.add('selected');
-        const changeEvent = new Event('change');
-    firstChild.dispatchEvent(changeEvent);
     })();
 };
-
-// GET DATA
-(function() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://atum.ga/edf/_data.json", true);
-    xhr.responseType = "json"; 
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            _data = xhr.response;
-            onDataLoaded();
-        }
-    };
-    xhr.send();
-})();
