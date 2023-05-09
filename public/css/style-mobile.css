@@ -32,6 +32,10 @@
 		{
 			margin: 0 0 1em 0;
 		}
+		header.major
+		{
+			padding-bottom: 1em;
+		}
 		
 		footer
 		{
@@ -306,7 +310,7 @@
 
 	#banner
 	{
-		margin: 2em 0 4em 0 !important;
+		margin: 2em 0 0 0 !important;
 		padding: 6em 0;
 	}
 	
