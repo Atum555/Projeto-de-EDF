@@ -1,6 +1,5 @@
-function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
 window.onload = () => {
-    _graph = new CanvasJS.Chart("chartContainer", {
+    let _graph = new CanvasJS.Chart("_graph_container", {
         animationEnabled: true,
         theme: "light2", // "light1", "light2", "dark1", "dark2"
         title:{
@@ -32,6 +31,12 @@ window.onload = () => {
 let _data;
 let _graph;
 
+// CHANGE GRAPH
+const onGraphSelectChange = (event) => {
+    console.log("it changed")
+}
+
+// SETUP SITE WITH DATA
 const onDataLoaded = () => {
     (function() {
         const _select = document.getElementById("_graph_select");
@@ -48,14 +53,10 @@ const onDataLoaded = () => {
     })();
 };
 
-const onGraphSelectChange = (event) => {
-    console.log(event.target.value);
-    console.log("it changed")
-}
-
+// GET DATA
 (function() {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://94.61.210.193/edf/_data.json", true);
+    xhr.open("GET", "https://atum.ga/edf/_data.json", true);
     xhr.responseType = "json"; 
     xhr.onload = function() {
         if (xhr.status === 200) {
@@ -65,7 +66,3 @@ const onGraphSelectChange = (event) => {
     };
     xhr.send();
 })();
-
-/* ---INTERACTIONS---
-Redraw   {KeyR}
- */
