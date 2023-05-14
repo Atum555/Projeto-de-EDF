@@ -1,10 +1,365 @@
-{
+// Globals
+const _data = {
+    "graph_type": {
+        "single": [
+            {
+                "title": "Cursos",
+                "type": "Pie",
+                "options": [
+                    "Ciências e Tecnologias",
+                    "Humanidades",
+                    "Economia",
+                    "Artes"
+                ]
+            },
+            {
+                "title": "Especificas",
+                "type": "Pie",
+                "options": [
+                    "Química",
+                    "Biologia",
+                    "Física",
+                    "Psicologia B",
+                    "Inglês",
+                    "Sociologia",
+                    "História A",
+                    "Geografia C",
+                    "Oficina de Artes",
+                    "Oficina Multimédia",
+                    "Espanhol"
+                ]
+            },
+            {
+                "title": "Peso",
+                "type": "Bar",
+                "options": [
+                    "+150kg",
+                    "120-150kg",
+                    "100-120kg",
+                    "90-100kg",
+                    "85-90kg",
+                    "80-85kg",
+                    "75-80kg",
+                    "70-75kg",
+                    "65-70kg",
+                    "60-65kg",
+                    "55-60kg",
+                    "50-55kg",
+                    "45-50kg",
+                    "40-45kg",
+                    "20-40kg"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Peso"
+            },
+            {
+                "title": "Altura",
+                "type": "Bar",
+                "options": null,
+                "axisY": "Número de Pessoas",
+                "axisX": "Altura (cm)"
+            },
+            {
+                "title": "Sexo",
+                "type": "Pie",
+                "options": [
+                    "Feminino",
+                    "Masculino"
+                ]
+            },
+            {
+                "title": "Número de Refeições",
+                "type": "Bar",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Número de Refeições"
+            },
+            {
+                "title": "Pequeno Almoço",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Pequeno Almoço Saudavél",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Mais ou menos",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Alimentação de acordo com a Roda dos Alimentos",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Mais ou menos",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Peças de Fruta Diárias",
+                "type": "Bar",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Número de Peças de Fruta"
+            },
+            {
+                "title": "Porções de Legumes",
+                "type": "Bar",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Número de Porções de Legumes"
+            },
+            {
+                "title": "Pessoas que sabem o consumo calórico recomendado",
+                "type": "Pie",
+                "options": [
+                    "Sim e respeito-o",
+                    "Sim mas não o respeito-o",
+                    "Mais ou menos",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Pessoas que consultam um Nutricionista",
+                "type": "Pie",
+                "options": [
+                    "Sim e sigo um plano alimentar",
+                    "Sim mas não sigo um plano alimentar rigoroso",
+                    "Não mas sigo um plano alimentar",
+                    "Não e não sigo qualquer tipo de plano alimentar"
+                ]
+            },
+            {
+                "title": "Restrições Alimentares",
+                "type": "Pie",
+                "options": [
+                    "Veganismo",
+                    "Vegetarianismo",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Fast-Food Mensal",
+                "type": "Bar",
+                "options": [
+                    "Apenas ocasiões expeciais ou nunca.",
+                    "1-2",
+                    "3-5",
+                    "6-10",
+                    "+10"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Vezes por mês"
+            },
+            {
+                "title": "Praticas Atividade Física?",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Desporto Praticado",
+                "type": "Pie",
+                "options": null
+            },
+            {
+                "title": "Tipo de Atividade Física",
+                "type": "Pie",
+                "options": [
+                    "Coletivo",
+                    "Individual"
+                ]
+            },
+            {
+                "title": "Frequencia da Atividade Física",
+                "type": "Bar",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Vezes por semana"
+            },
+            {
+                "title": "Ginásio",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Frequencia do Ginásio",
+                "type": "Bar",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Vezes por semana"
+            },
+            {
+                "title": "Duração treinos Ginásio",
+                "type": "Bar",
+                "options": [
+                    "<30min",
+                    "30min - 1h",
+                    "1h - 2h",
+                    ">2h"
+                ],
+                "axisY": "Número de Pessoas"
+            },
+            {
+                "title": "Lesões",
+                "type": "Pie",
+                "options": [
+                    "Sim, mais do que uma...",
+                    "Sim",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Intensidade do Exercício físico",
+                "type": "Pie",
+                "options": [
+                    "pouco ou nenhum",
+                    "leve 1-3 dias por semana",
+                    "de intensidade moderada 3-5 dias por semana",
+                    "intenso 6-7 dias por semana",
+                    "muito intenso 6-7 dias por semana"
+                ]
+            },
+            {
+                "title": "Horas de Sono durante a Semana",
+                "type": "Bar",
+                "options": [
+                    "<5h",
+                    "5h - 6h",
+                    "6h - 7h",
+                    "7h - 8h",
+                    "8h - 9h",
+                    ">9h"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Horas por dia"
+            },
+            {
+                "title": "Horas de Sono durante o Fim de Semana",
+                "type": "Bar",
+                "options": [
+                    "<5h",
+                    "5h - 6h",
+                    "6h - 7h",
+                    "7h - 8h",
+                    "8h - 9h",
+                    "9h - 10h",
+                    ">10h"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Horas por dia"
+            },
+            {
+                "title": "Ecrâs perto da hora de dormir",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Ecrâs até adormecer",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Comer antes de dormir",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Exercício antes de Dormir",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Sestas durante o dia",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
+            },
+            {
+                "title": "Sono regulado",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
+            }
+        ]
+    },
     "questions": [
-        "ID",
-        "Start time",
-        "Completion time",
-        "Email",
-        "Name",
         "Em qual curso te encontras?",
         "Quais especificas frequentas?",
         "Seleciona o intervalo que melhor enquadra o teu peso.",
@@ -40,11 +395,6 @@
     ],
     "answers": [
         [
-            "10",
-            "3/6/23 15:52:58",
-            "3/6/23 15:56:00",
-            "anonymous",
-            "",
             "Humanidades",
             "Geografia C;Inglês;",
             "65-70kg",
@@ -79,11 +429,6 @@
             "Sim"
         ],
         [
-            "11",
-            "3/6/23 16:26:44",
-            "3/6/23 16:28:43",
-            "anonymous",
-            "",
             "Humanidades",
             "Geografia C;Inglês;",
             "45-50kg",
@@ -118,11 +463,6 @@
             "Às vezes"
         ],
         [
-            "12",
-            "3/6/23 16:27:48",
-            "3/6/23 16:31:04",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Geografia C;",
             "50-55kg",
@@ -157,11 +497,6 @@
             "Sim"
         ],
         [
-            "13",
-            "3/6/23 16:27:29",
-            "3/6/23 16:32:20",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "60-65kg",
@@ -196,11 +531,6 @@
             "Sim"
         ],
         [
-            "14",
-            "3/6/23 16:38:36",
-            "3/6/23 16:41:08",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "65-70kg",
@@ -235,11 +565,6 @@
             "Sim"
         ],
         [
-            "15",
-            "3/6/23 17:27:17",
-            "3/6/23 17:30:23",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Geografia C;",
             "50-55kg",
@@ -274,11 +599,6 @@
             "Sim"
         ],
         [
-            "16",
-            "3/6/23 18:50:40",
-            "3/6/23 18:59:07",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Inglês;",
             "65-70kg",
@@ -295,7 +615,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Tenis",
+            "Ténis",
             "Coletivo",
             "1",
             "Não",
@@ -313,11 +633,6 @@
             "Sim"
         ],
         [
-            "17",
-            "3/6/23 19:00:08",
-            "3/6/23 19:02:49",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "65-70kg",
@@ -352,11 +667,6 @@
             "Sim"
         ],
         [
-            "18",
-            "3/6/23 19:28:36",
-            "3/6/23 19:31:00",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "65-70kg",
@@ -391,11 +701,6 @@
             "Sim"
         ],
         [
-            "19",
-            "3/6/23 19:28:31",
-            "3/6/23 19:32:17",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Inglês;",
             "65-70kg",
@@ -430,11 +735,6 @@
             "Não"
         ],
         [
-            "20",
-            "3/6/23 19:31:47",
-            "3/6/23 19:34:33",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "60-65kg",
@@ -469,11 +769,6 @@
             "Às vezes"
         ],
         [
-            "21",
-            "3/6/23 19:41:03",
-            "3/6/23 19:45:20",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "60-65kg",
@@ -490,7 +785,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Dança ",
+            "Dança",
             "Coletivo",
             "2",
             "Não",
@@ -508,11 +803,6 @@
             "Sim"
         ],
         [
-            "22",
-            "3/6/23 19:53:16",
-            "3/6/23 19:56:03",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "55-60kg",
@@ -547,11 +837,6 @@
             "Sim"
         ],
         [
-            "23",
-            "3/6/23 20:03:30",
-            "3/6/23 20:12:31",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "60-65kg",
@@ -586,11 +871,6 @@
             "Sim"
         ],
         [
-            "24",
-            "3/6/23 20:15:50",
-            "3/6/23 20:23:41",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "60-65kg",
@@ -625,11 +905,6 @@
             "Sim"
         ],
         [
-            "25",
-            "3/6/23 20:40:23",
-            "3/6/23 20:43:20",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "50-55kg",
@@ -664,11 +939,6 @@
             "Às vezes"
         ],
         [
-            "26",
-            "3/6/23 21:30:55",
-            "3/6/23 21:35:11",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Inglês;",
             "65-70kg",
@@ -703,11 +973,6 @@
             "Sim"
         ],
         [
-            "27",
-            "3/6/23 22:17:43",
-            "3/6/23 22:20:14",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "55-60kg",
@@ -742,11 +1007,6 @@
             "Sim"
         ],
         [
-            "28",
-            "3/7/23 8:37:15",
-            "3/7/23 8:41:28",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "65-70kg",
@@ -781,11 +1041,6 @@
             "Sim"
         ],
         [
-            "29",
-            "3/7/23 9:10:17",
-            "3/7/23 9:15:07",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "70-75kg",
@@ -802,7 +1057,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Futebol ",
+            "Futebol",
             "Coletivo",
             "5",
             "Não",
@@ -820,11 +1075,6 @@
             "Sim"
         ],
         [
-            "30",
-            "3/7/23 9:11:46",
-            "3/7/23 9:16:00",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "60-65kg",
@@ -859,11 +1109,6 @@
             "Sim"
         ],
         [
-            "31",
-            "3/7/23 9:14:10",
-            "3/7/23 9:17:52",
-            "anonymous",
-            "",
             "Artes",
             "Oficina Multimédia;Oficina de Artes;",
             "70-75kg",
@@ -898,11 +1143,6 @@
             "Sim"
         ],
         [
-            "32",
-            "3/7/23 9:13:19",
-            "3/7/23 9:18:25",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "60-65kg",
@@ -937,11 +1177,6 @@
             "Às vezes"
         ],
         [
-            "33",
-            "3/7/23 9:18:43",
-            "3/7/23 9:20:55",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "85-90kg",
@@ -976,11 +1211,6 @@
             "Não"
         ],
         [
-            "34",
-            "3/7/23 9:16:52",
-            "3/7/23 9:21:46",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "75-80kg",
@@ -1015,11 +1245,6 @@
             "Sim"
         ],
         [
-            "35",
-            "3/7/23 9:32:11",
-            "3/7/23 9:34:51",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Psicologia B;",
             "50-55kg",
@@ -1054,11 +1279,6 @@
             "Sim"
         ],
         [
-            "36",
-            "3/7/23 9:33:22",
-            "3/7/23 9:45:43",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "60-65kg",
@@ -1093,11 +1313,6 @@
             "Sim"
         ],
         [
-            "37",
-            "3/7/23 9:48:09",
-            "3/7/23 9:52:13",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Inglês;",
             "60-65kg",
@@ -1132,11 +1347,6 @@
             "Sim"
         ],
         [
-            "38",
-            "3/7/23 9:59:14",
-            "3/7/23 10:04:29",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "60-65kg",
@@ -1171,11 +1381,6 @@
             "Sim"
         ],
         [
-            "39",
-            "3/7/23 10:04:23",
-            "3/7/23 10:07:34",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "60-65kg",
@@ -1192,7 +1397,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Basquetebol ",
+            "Basquetebol",
             "Coletivo",
             "3",
             "Não",
@@ -1210,11 +1415,6 @@
             "Sim"
         ],
         [
-            "40",
-            "3/7/23 10:02:15",
-            "3/7/23 10:09:03",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "55-60kg",
@@ -1231,7 +1431,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Padel e Dança ",
+            "Padel Dança",
             "Coletivo",
             "5",
             "Sim",
@@ -1249,11 +1449,6 @@
             "Às vezes"
         ],
         [
-            "41",
-            "3/7/23 10:06:17",
-            "3/7/23 10:09:53",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Química;",
             "55-60kg",
@@ -1288,11 +1483,6 @@
             "Sim"
         ],
         [
-            "42",
-            "3/7/23 10:07:55",
-            "3/7/23 10:10:10",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "80-85kg",
@@ -1327,11 +1517,6 @@
             "Às vezes"
         ],
         [
-            "43",
-            "3/7/23 10:08:31",
-            "3/7/23 10:12:14",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "50-55kg",
@@ -1366,11 +1551,6 @@
             "Sim"
         ],
         [
-            "44",
-            "3/7/23 11:43:01",
-            "3/7/23 11:47:26",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "60-65kg",
@@ -1405,11 +1585,6 @@
             "Às vezes"
         ],
         [
-            "45",
-            "3/7/23 11:45:36",
-            "3/7/23 11:50:19",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "60-65kg",
@@ -1444,11 +1619,6 @@
             "Sim"
         ],
         [
-            "46",
-            "3/7/23 11:58:52",
-            "3/7/23 11:58:56",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "60-65kg",
@@ -1483,11 +1653,6 @@
             "Sim"
         ],
         [
-            "47",
-            "3/7/23 12:02:42",
-            "3/7/23 12:05:47",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "70-75kg",
@@ -1504,7 +1669,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Hóquei em patins",
+            "Hóquei_em_Patins",
             "Coletivo",
             "4",
             "Não",
@@ -1522,11 +1687,6 @@
             "Sim"
         ],
         [
-            "48",
-            "3/7/23 12:12:13",
-            "3/7/23 12:18:53",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Psicologia B;",
             "50-55kg",
@@ -1561,11 +1721,6 @@
             "Sim"
         ],
         [
-            "49",
-            "3/7/23 13:06:53",
-            "3/7/23 13:10:58",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Psicologia B;",
             "50-55kg",
@@ -1600,11 +1755,6 @@
             "Não"
         ],
         [
-            "50",
-            "3/7/23 12:08:27",
-            "3/7/23 13:13:06",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "65-70kg",
@@ -1621,7 +1771,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Costumo jogar futebol e andar de bicicleta ",
+            "Futebol Bicicleta",
             "Coletivo",
             "2",
             "Não",
@@ -1639,11 +1789,6 @@
             "Sim"
         ],
         [
-            "51",
-            "3/7/23 13:17:49",
-            "3/7/23 13:22:08",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "65-70kg",
@@ -1678,11 +1823,6 @@
             "Sim"
         ],
         [
-            "52",
-            "3/7/23 13:34:40",
-            "3/7/23 13:37:04",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Psicologia B;Biologia;",
             "50-55kg",
@@ -1699,7 +1839,7 @@
             "Não",
             "3-5",
             "Sim",
-            "andebol e futsal",
+            "Andebol Futsal",
             "Coletivo",
             "7",
             "Não",
@@ -1717,11 +1857,6 @@
             "Sim"
         ],
         [
-            "53",
-            "3/7/23 13:07:22",
-            "3/7/23 14:03:03",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Inglês;Física;",
             "60-65kg",
@@ -1756,11 +1891,6 @@
             "Sim"
         ],
         [
-            "54",
-            "3/7/23 14:08:13",
-            "3/7/23 14:26:53",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Inglês;",
             "85-90kg",
@@ -1777,7 +1907,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Hóquei em patins ",
+            "Hóquei_em_Patins",
             "Coletivo",
             "4",
             "Não",
@@ -1795,11 +1925,6 @@
             "Às vezes"
         ],
         [
-            "55",
-            "3/7/23 14:51:01",
-            "3/7/23 14:54:01",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Psicologia B;",
             "65-70kg",
@@ -1834,11 +1959,6 @@
             "Sim"
         ],
         [
-            "56",
-            "3/7/23 14:56:25",
-            "3/7/23 14:58:44",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "75-80kg",
@@ -1873,11 +1993,6 @@
             "Sim"
         ],
         [
-            "57",
-            "3/7/23 15:53:00",
-            "3/7/23 15:57:54",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Psicologia B;",
             "60-65kg",
@@ -1894,7 +2009,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Exercicios em casa ",
+            "Exercícios_em_casa ",
             "Individual",
             "1",
             "Não",
@@ -1912,11 +2027,6 @@
             "Sim"
         ],
         [
-            "58",
-            "3/7/23 17:06:30",
-            "3/7/23 17:09:43",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "65-70kg",
@@ -1951,11 +2061,6 @@
             "Sim"
         ],
         [
-            "59",
-            "3/7/23 17:50:38",
-            "3/7/23 17:59:12",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "50-55kg",
@@ -1990,11 +2095,6 @@
             "Sim"
         ],
         [
-            "60",
-            "3/7/23 19:44:37",
-            "3/7/23 19:48:17",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Química;",
             "80-85kg",
@@ -2011,7 +2111,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Hóquei em patins ",
+            "Hóquei_em_Patins ",
             "Coletivo",
             "4",
             "Não",
@@ -2029,11 +2129,6 @@
             "Sim"
         ],
         [
-            "61",
-            "3/7/23 20:50:27",
-            "3/7/23 20:52:58",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "70-75kg",
@@ -2050,7 +2145,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Piscina",
+            "Natação",
             "Individual",
             "1",
             "Não",
@@ -2068,11 +2163,6 @@
             "Sim"
         ],
         [
-            "62",
-            "3/7/23 21:57:06",
-            "3/7/23 21:59:02",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Inglês;",
             "65-70kg",
@@ -2107,11 +2197,6 @@
             "Sim"
         ],
         [
-            "63",
-            "3/7/23 21:50:09",
-            "3/7/23 21:59:24",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Inglês;",
             "50-55kg",
@@ -2146,11 +2231,6 @@
             "Sim"
         ],
         [
-            "64",
-            "3/7/23 21:58:24",
-            "3/7/23 22:00:34",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Psicologia B;",
             "65-70kg",
@@ -2167,7 +2247,7 @@
             "Não",
             "3-5",
             "Sim",
-            "KickBoxing/Muay Thai ",
+            "KickBoxing Muay Thai ",
             "Individual",
             "3",
             "Sim",
@@ -2185,11 +2265,6 @@
             "Sim"
         ],
         [
-            "65",
-            "3/7/23 22:02:20",
-            "3/7/23 22:05:12",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "70-75kg",
@@ -2224,11 +2299,6 @@
             "Sim"
         ],
         [
-            "66",
-            "3/7/23 22:19:26",
-            "3/7/23 22:22:53",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Geografia C;",
             "55-60kg",
@@ -2263,11 +2333,6 @@
             "Não"
         ],
         [
-            "67",
-            "3/7/23 22:15:45",
-            "3/7/23 22:23:14",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Psicologia B;",
             "55-60kg",
@@ -2302,11 +2367,6 @@
             "Sim"
         ],
         [
-            "68",
-            "3/7/23 22:50:09",
-            "3/7/23 22:52:37",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "70-75kg",
@@ -2341,11 +2401,6 @@
             "Sim"
         ],
         [
-            "69",
-            "3/7/23 23:00:25",
-            "3/7/23 23:01:48",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "65-70kg",
@@ -2362,7 +2417,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Natação ",
+            "Natação",
             "Coletivo",
             "1",
             "Não",
@@ -2380,11 +2435,6 @@
             "Sim"
         ],
         [
-            "70",
-            "3/8/23 11:09:31",
-            "3/8/23 11:12:34",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "85-90kg",
@@ -2401,7 +2451,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Karaté ",
+            "Karaté",
             "Coletivo",
             "1",
             "Sim",
@@ -2419,11 +2469,6 @@
             "Sim"
         ],
         [
-            "71",
-            "3/8/23 14:07:03",
-            "3/8/23 14:07:19",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "50-55kg",
@@ -2458,11 +2503,6 @@
             "Às vezes"
         ],
         [
-            "72",
-            "3/8/23 14:07:10",
-            "3/8/23 14:12:53",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Inglês;",
             "85-90kg",
@@ -2497,11 +2537,6 @@
             "Sim"
         ],
         [
-            "73",
-            "3/8/23 14:54:03",
-            "3/8/23 14:57:13",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Inglês;",
             "55-60kg",
@@ -2536,11 +2571,6 @@
             "Sim"
         ],
         [
-            "74",
-            "3/8/23 15:05:14",
-            "3/8/23 15:11:05",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "65-70kg",
@@ -2575,11 +2605,6 @@
             "Sim"
         ],
         [
-            "75",
-            "3/8/23 15:11:50",
-            "3/8/23 15:16:26",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Psicologia B;",
             "85-90kg",
@@ -2596,7 +2621,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Crossfit ",
+            "Crossfit",
             "Individual",
             "5",
             "Sim",
@@ -2614,11 +2639,6 @@
             "Às vezes"
         ],
         [
-            "76",
-            "3/8/23 15:12:48",
-            "3/8/23 15:22:02",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Psicologia B;",
             "75-80kg",
@@ -2635,7 +2655,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Muay Thai ",
+            "Muay_Thai",
             "Individual",
             "3",
             "Não",
@@ -2653,11 +2673,6 @@
             "Sim"
         ],
         [
-            "77",
-            "3/8/23 16:25:17",
-            "3/8/23 16:32:31",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Espanhol;",
             "60-65kg",
@@ -2692,11 +2707,6 @@
             "Sim"
         ],
         [
-            "78",
-            "3/8/23 16:31:17",
-            "3/8/23 16:34:22",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Espanhol;",
             "60-65kg",
@@ -2731,11 +2741,6 @@
             "Não"
         ],
         [
-            "79",
-            "3/8/23 16:58:36",
-            "3/8/23 17:02:15",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "75-80kg",
@@ -2752,7 +2757,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Bombos ",
+            "Bombos",
             "Coletivo",
             "2",
             "Não",
@@ -2770,11 +2775,6 @@
             "Sim"
         ],
         [
-            "80",
-            "3/8/23 17:29:30",
-            "3/8/23 17:31:47",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Psicologia B;Biologia;",
             "60-65kg",
@@ -2809,11 +2809,6 @@
             "Sim"
         ],
         [
-            "81",
-            "3/8/23 17:27:21",
-            "3/8/23 17:33:06",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Psicologia B;Biologia;",
             "85-90kg",
@@ -2848,11 +2843,6 @@
             "Sim"
         ],
         [
-            "82",
-            "3/8/23 17:31:19",
-            "3/8/23 17:35:44",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "60-65kg",
@@ -2887,11 +2877,6 @@
             "Às vezes"
         ],
         [
-            "83",
-            "3/8/23 17:30:36",
-            "3/8/23 17:42:34",
-            "anonymous",
-            "",
             "Humanidades",
             "Geografia C;Espanhol;",
             "50-55kg",
@@ -2908,7 +2893,7 @@
             "Não",
             "3-5",
             "Sim",
-            "corrida/caminhada",
+            "Corrida Caminhada",
             "Coletivo",
             "1",
             "Não",
@@ -2926,11 +2911,6 @@
             "Sim"
         ],
         [
-            "84",
-            "3/8/23 17:39:39",
-            "3/8/23 17:42:43",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Espanhol;",
             "60-65kg",
@@ -2965,11 +2945,6 @@
             "Às vezes"
         ],
         [
-            "85",
-            "3/8/23 17:44:42",
-            "3/8/23 17:47:49",
-            "anonymous",
-            "",
             "Humanidades",
             "Geografia C;Espanhol;",
             "55-60kg",
@@ -3004,11 +2979,6 @@
             "Sim"
         ],
         [
-            "86",
-            "3/8/23 17:46:42",
-            "3/8/23 17:50:16",
-            "anonymous",
-            "",
             "Humanidades",
             "Geografia C;Espanhol;",
             "60-65kg",
@@ -3043,11 +3013,6 @@
             "Às vezes"
         ],
         [
-            "87",
-            "3/8/23 17:44:16",
-            "3/8/23 17:52:09",
-            "anonymous",
-            "",
             "Humanidades",
             "Geografia C;Espanhol;",
             "40-45kg",
@@ -3082,11 +3047,6 @@
             "Sim"
         ],
         [
-            "88",
-            "3/8/23 18:08:53",
-            "3/8/23 18:10:53",
-            "anonymous",
-            "",
             "Humanidades",
             "Espanhol;Inglês;",
             "55-60kg",
@@ -3121,11 +3081,6 @@
             "Às vezes"
         ],
         [
-            "89",
-            "3/8/23 18:04:03",
-            "3/8/23 18:15:54",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "55-60kg",
@@ -3160,11 +3115,6 @@
             "Sim"
         ],
         [
-            "90",
-            "3/8/23 18:17:59",
-            "3/8/23 18:21:09",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Espanhol;",
             "50-55kg",
@@ -3199,11 +3149,6 @@
             "Às vezes"
         ],
         [
-            "91",
-            "3/8/23 18:24:51",
-            "3/8/23 18:27:30",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;História A;",
             "45-50kg",
@@ -3238,11 +3183,6 @@
             "Às vezes"
         ],
         [
-            "92",
-            "3/8/23 18:37:12",
-            "3/8/23 18:40:15",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Espanhol;",
             "75-80kg",
@@ -3259,7 +3199,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Pólo Aquático ",
+            "Polo_Aquático",
             "Coletivo",
             "7",
             "Não",
@@ -3277,11 +3217,6 @@
             "Não"
         ],
         [
-            "93",
-            "3/8/23 18:38:09",
-            "3/8/23 18:43:00",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;História A;",
             "55-60kg",
@@ -3316,11 +3251,6 @@
             "Sim"
         ],
         [
-            "94",
-            "3/8/23 18:46:58",
-            "3/8/23 18:49:23",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Física;",
             "50-55kg",
@@ -3337,7 +3267,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Natação ",
+            "Natação",
             "Individual",
             "2",
             "Não",
@@ -3355,11 +3285,6 @@
             "Às vezes"
         ],
         [
-            "95",
-            "3/8/23 18:54:33",
-            "3/8/23 18:57:33",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "60-65kg",
@@ -3394,11 +3319,6 @@
             "Às vezes"
         ],
         [
-            "96",
-            "3/8/23 19:37:55",
-            "3/8/23 19:41:21",
-            "anonymous",
-            "",
             "Humanidades",
             "Geografia C;Espanhol;",
             "55-60kg",
@@ -3433,11 +3353,6 @@
             "Sim"
         ],
         [
-            "97",
-            "3/8/23 20:01:46",
-            "3/8/23 20:04:37",
-            "anonymous",
-            "",
             "Humanidades",
             "História A;Psicologia B;",
             "50-55kg",
@@ -3472,11 +3387,6 @@
             "Sim"
         ],
         [
-            "98",
-            "3/8/23 20:03:48",
-            "3/8/23 20:07:40",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "60-65kg",
@@ -3511,11 +3421,6 @@
             "Sim"
         ],
         [
-            "99",
-            "3/8/23 21:58:18",
-            "3/8/23 22:00:47",
-            "anonymous",
-            "",
             "Economia",
             "Sociologia;Psicologia B;",
             "70-75kg",
@@ -3550,11 +3455,6 @@
             "Sim"
         ],
         [
-            "100",
-            "3/8/23 22:00:23",
-            "3/8/23 22:03:54",
-            "anonymous",
-            "",
             "Humanidades",
             "Sociologia;Psicologia B;",
             "50-55kg",
@@ -3589,11 +3489,6 @@
             "Às vezes"
         ],
         [
-            "101",
-            "3/8/23 22:23:27",
-            "3/8/23 22:27:38",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "50-55kg",
@@ -3628,11 +3523,6 @@
             "Sim"
         ],
         [
-            "102",
-            "3/8/23 22:51:09",
-            "3/8/23 22:53:42",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Inglês;",
             "60-65kg",
@@ -3667,11 +3557,6 @@
             "Sim"
         ],
         [
-            "103",
-            "3/8/23 23:33:51",
-            "3/8/23 23:38:24",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Inglês;",
             "60-65kg",
@@ -3688,7 +3573,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Voleibol ",
+            "Voleibol",
             "Coletivo",
             "4",
             "Sim",
@@ -3706,11 +3591,6 @@
             "Sim"
         ],
         [
-            "104",
-            "3/9/23 10:29:47",
-            "3/9/23 10:32:13",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Espanhol;",
             "80-85kg",
@@ -3745,11 +3625,6 @@
             "Sim"
         ],
         [
-            "105",
-            "3/9/23 11:58:36",
-            "3/9/23 12:02:32",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "60-65kg",
@@ -3784,11 +3659,6 @@
             "Sim"
         ],
         [
-            "106",
-            "3/9/23 14:41:11",
-            "3/9/23 14:44:27",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "65-70kg",
@@ -3823,11 +3693,6 @@
             "Sim"
         ],
         [
-            "107",
-            "3/9/23 15:04:38",
-            "3/9/23 15:08:59",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "75-80kg",
@@ -3844,7 +3709,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Basketball",
+            "Basquetebol",
             "Coletivo",
             "4",
             "Não",
@@ -3862,11 +3727,6 @@
             "Às vezes"
         ],
         [
-            "108",
-            "3/9/23 16:59:31",
-            "3/9/23 17:02:35",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Inglês;",
             "40-45kg",
@@ -3901,11 +3761,6 @@
             "Sim"
         ],
         [
-            "109",
-            "3/9/23 18:03:41",
-            "3/9/23 18:18:44",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Inglês;Biologia;",
             "60-65kg",
@@ -3940,11 +3795,6 @@
             "Sim"
         ],
         [
-            "110",
-            "3/9/23 19:29:13",
-            "3/9/23 19:35:21",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "70-75kg",
@@ -3961,7 +3811,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Basquetebol, Ténis de Campo e Ténis de Mesa",
+            "Basquetebol Ténis Ténis_de_Mesa",
             "Individual",
             "3",
             "Não",
@@ -3979,11 +3829,6 @@
             "Sim"
         ],
         [
-            "111",
-            "3/9/23 19:28:48",
-            "3/9/23 19:35:23",
-            "anonymous",
-            "",
             "Artes",
             "Oficina de Artes;Oficina Multimédia;",
             "70-75kg",
@@ -4000,7 +3845,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Basquetebol, Ténis de Campo e Ténis de Mesa",
+            "Basquetebol Ténis Ténis_de_Mesa",
             "Individual",
             "3",
             "Não",
@@ -4018,11 +3863,6 @@
             "Sim"
         ],
         [
-            "112",
-            "3/9/23 19:58:53",
-            "3/9/23 20:02:17",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "70-75kg",
@@ -4057,11 +3897,6 @@
             "Sim"
         ],
         [
-            "113",
-            "3/9/23 23:01:08",
-            "3/9/23 23:04:39",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "70-75kg",
@@ -4096,11 +3931,6 @@
             "Sim"
         ],
         [
-            "114",
-            "3/10/23 9:46:40",
-            "3/10/23 9:50:33",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "65-70kg",
@@ -4135,11 +3965,6 @@
             "Sim"
         ],
         [
-            "115",
-            "3/10/23 9:49:00",
-            "3/10/23 9:52:42",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "60-65kg",
@@ -4174,11 +3999,6 @@
             "Sim"
         ],
         [
-            "116",
-            "3/10/23 9:51:01",
-            "3/10/23 9:54:50",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "65-70kg",
@@ -4195,7 +4015,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Polo aquático",
+            "Polo_Aquático",
             "Coletivo",
             "6",
             "Não",
@@ -4213,11 +4033,6 @@
             "Às vezes"
         ],
         [
-            "117",
-            "3/10/23 17:05:57",
-            "3/10/23 17:11:20",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Inglês;",
             "55-60kg",
@@ -4252,11 +4067,6 @@
             "Sim"
         ],
         [
-            "118",
-            "3/10/23 22:00:33",
-            "3/10/23 22:12:37",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "75-80kg",
@@ -4291,11 +4101,6 @@
             "Sim"
         ],
         [
-            "119",
-            "3/11/23 10:48:01",
-            "3/11/23 10:51:34",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Psicologia B;",
             "55-60kg",
@@ -4312,7 +4117,7 @@
             "Não",
             "3-5",
             "Sim",
-            "hiphop",
+            "HipHop",
             "Coletivo",
             "2",
             "Não",
@@ -4330,11 +4135,6 @@
             "Às vezes"
         ],
         [
-            "120",
-            "3/11/23 14:58:04",
-            "3/11/23 15:00:46",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Inglês;Biologia;",
             "60-65kg",
@@ -4369,11 +4169,6 @@
             "Sim"
         ],
         [
-            "121",
-            "3/11/23 16:38:47",
-            "3/11/23 16:42:50",
-            "anonymous",
-            "",
             "Humanidades",
             "Sociologia;Psicologia B;",
             "70-75kg",
@@ -4408,11 +4203,6 @@
             "Sim"
         ],
         [
-            "122",
-            "3/12/23 20:11:26",
-            "3/12/23 20:14:19",
-            "anonymous",
-            "",
             "Humanidades",
             "História A;Psicologia B;",
             "70-75kg",
@@ -4447,11 +4237,6 @@
             "Às vezes"
         ],
         [
-            "123",
-            "3/12/23 21:31:29",
-            "3/12/23 21:56:40",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "60-65kg",
@@ -4468,7 +4253,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Natação ",
+            "Natação",
             "Coletivo",
             "1",
             "Não",
@@ -4486,11 +4271,6 @@
             "Sim"
         ],
         [
-            "124",
-            "3/12/23 23:18:00",
-            "3/12/23 23:20:52",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "80-85kg",
@@ -4525,11 +4305,6 @@
             "Sim"
         ],
         [
-            "125",
-            "3/15/23 14:01:49",
-            "3/15/23 14:03:58",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Física;",
             "60-65kg",
@@ -4564,11 +4339,6 @@
             "Sim"
         ],
         [
-            "126",
-            "3/16/23 14:37:42",
-            "3/16/23 14:42:29",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Psicologia B;",
             "50-55kg",
@@ -4585,7 +4355,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Dança ",
+            "Dança",
             "Coletivo",
             "2",
             "Não",
@@ -4603,11 +4373,6 @@
             "Sim"
         ],
         [
-            "127",
-            "3/17/23 8:37:19",
-            "3/17/23 8:40:31",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Física;Inglês;",
             "60-65kg",
@@ -4624,7 +4389,7 @@
             "Não",
             "3-5",
             "Sim",
-            "corrida ",
+            "Corrida",
             "Individual",
             "2",
             "Não",
@@ -4642,11 +4407,6 @@
             "Sim"
         ],
         [
-            "128",
-            "3/17/23 8:41:14",
-            "3/17/23 8:44:23",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "75-80kg",
@@ -4663,7 +4423,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Natação ",
+            "Natação",
             "Individual",
             "6",
             "Sim",
@@ -4681,11 +4441,6 @@
             "Sim"
         ],
         [
-            "129",
-            "3/17/23 13:18:36",
-            "3/17/23 13:21:10",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Física;",
             "60-65kg",
@@ -4720,11 +4475,6 @@
             "Sim"
         ],
         [
-            "130",
-            "3/17/23 22:32:28",
-            "3/17/23 22:34:45",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Química;Biologia;",
             "45-50kg",
@@ -4759,11 +4509,6 @@
             "Às vezes"
         ],
         [
-            "131",
-            "3/17/23 23:38:57",
-            "3/17/23 23:43:53",
-            "anonymous",
-            "",
             "Ciências e Tecnologias",
             "Biologia;Inglês;",
             "75-80kg",
@@ -4798,11 +4543,6 @@
             "Sim"
         ],
         [
-            "132",
-            "3/18/23 16:22:32",
-            "3/18/23 16:24:18",
-            "anonymous",
-            "",
             "Economia",
             "Sociologia;Psicologia B;",
             "80-85kg",
@@ -4837,11 +4577,6 @@
             "Sim"
         ],
         [
-            "133",
-            "3/20/23 8:28:06",
-            "3/20/23 8:30:25",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "70-75kg",
@@ -4876,11 +4611,6 @@
             "Sim"
         ],
         [
-            "134",
-            "3/20/23 8:29:24",
-            "3/20/23 8:33:07",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "65-70kg",
@@ -4897,7 +4627,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Futebol ",
+            "Futebol",
             "Coletivo",
             "5",
             "Não",
@@ -4915,11 +4645,6 @@
             "Sim"
         ],
         [
-            "135",
-            "3/20/23 8:33:03",
-            "3/20/23 8:39:33",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "55-60kg",
@@ -4936,7 +4661,7 @@
             "Não",
             "Apenas ocasiões expeciais ou nunca.",
             "Sim",
-            "Natação ",
+            "Natação",
             "Coletivo",
             "2",
             "Não",
@@ -4954,11 +4679,6 @@
             "Às vezes"
         ],
         [
-            "136",
-            "3/20/23 9:51:07",
-            "3/20/23 9:51:14",
-            "anonymous",
-            "",
             "Humanidades",
             "Psicologia B;Sociologia;",
             "60-65kg",
@@ -4975,7 +4695,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Futsal ",
+            "Futsal",
             "Coletivo",
             "3",
             "Não",
@@ -4993,11 +4713,6 @@
             "Sim"
         ],
         [
-            "137",
-            "3/20/23 14:58:55",
-            "3/20/23 15:02:39",
-            "anonymous",
-            "",
             "Humanidades",
             "Inglês;Geografia C;",
             "70-75kg",
@@ -5032,11 +4747,6 @@
             "Às vezes"
         ],
         [
-            "138",
-            "3/27/23 11:51:59",
-            "3/27/23 11:56:51",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "65-70kg",
@@ -5071,11 +4781,6 @@
             "Sim"
         ],
         [
-            "139",
-            "3/27/23 11:56:34",
-            "3/27/23 11:59:36",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "75-80kg",
@@ -5110,11 +4815,6 @@
             "Sim"
         ],
         [
-            "140",
-            "3/27/23 11:55:46",
-            "3/27/23 11:59:37",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Geografia C;",
             "65-70kg",
@@ -5149,11 +4849,6 @@
             "Sim"
         ],
         [
-            "141",
-            "3/27/23 11:56:30",
-            "3/27/23 12:00:46",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "70-75kg",
@@ -5170,7 +4865,7 @@
             "Não",
             "3-5",
             "Sim",
-            "BTT",
+            "Ciclismo",
             "Coletivo",
             "2",
             "Sim",
@@ -5188,11 +4883,6 @@
             "Sim"
         ],
         [
-            "142",
-            "3/27/23 11:56:32",
-            "3/27/23 12:00:47",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "60-65kg",
@@ -5209,7 +4899,7 @@
             "Não",
             "3-5",
             "Sim",
-            "dança ",
+            "Dança",
             "Coletivo",
             "3",
             "Não",
@@ -5227,11 +4917,6 @@
             "Às vezes"
         ],
         [
-            "143",
-            "3/27/23 12:01:27",
-            "3/27/23 12:04:47",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "55-60kg",
@@ -5266,11 +4951,6 @@
             "Sim"
         ],
         [
-            "144",
-            "3/27/23 13:38:52",
-            "3/27/23 13:40:55",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "45-50kg",
@@ -5305,11 +4985,6 @@
             "Sim"
         ],
         [
-            "145",
-            "3/27/23 13:39:44",
-            "3/27/23 13:42:14",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "50-55kg",
@@ -5344,11 +5019,6 @@
             "Sim"
         ],
         [
-            "146",
-            "3/27/23 13:42:52",
-            "3/27/23 13:45:13",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "45-50kg",
@@ -5383,11 +5053,6 @@
             "Sim"
         ],
         [
-            "147",
-            "3/27/23 14:18:57",
-            "3/27/23 14:21:50",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "60-65kg",
@@ -5422,11 +5087,6 @@
             "Às vezes"
         ],
         [
-            "148",
-            "3/27/23 14:35:03",
-            "3/27/23 14:39:39",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Geografia C;",
             "75-80kg",
@@ -5461,11 +5121,6 @@
             "Às vezes"
         ],
         [
-            "149",
-            "3/27/23 14:40:08",
-            "3/27/23 14:44:48",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "75-80kg",
@@ -5500,11 +5155,6 @@
             "Sim"
         ],
         [
-            "150",
-            "3/27/23 15:04:03",
-            "3/27/23 15:06:56",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Sociologia;",
             "45-50kg",
@@ -5520,10 +5170,10 @@
             "Sim e sigo um plano alimentar",
             "Não",
             "3-5",
-            "Sim",
-            "Ginásio",
-            "Individual",
-            "3",
+            "Não",
+            "",
+            "",
+            "",
             "Sim",
             "3",
             "1h - 2h",
@@ -5539,11 +5189,6 @@
             "Às vezes"
         ],
         [
-            "151",
-            "3/27/23 15:20:35",
-            "3/27/23 15:23:16",
-            "anonymous",
-            "",
             "Economia",
             "Sociologia;Psicologia B;",
             "50-55kg",
@@ -5578,11 +5223,6 @@
             "Sim"
         ],
         [
-            "152",
-            "3/27/23 15:40:16",
-            "3/27/23 15:42:51",
-            "anonymous",
-            "",
             "Economia",
             "Geografia C;Psicologia B;",
             "55-60kg",
@@ -5617,11 +5257,6 @@
             "Sim"
         ],
         [
-            "153",
-            "3/27/23 15:46:10",
-            "3/27/23 15:50:39",
-            "anonymous",
-            "",
             "Economia",
             "Psicologia B;Geografia C;",
             "55-60kg",
@@ -5657,3 +5292,150 @@
         ]
     ]
 }
+
+const _graph = {
+    single: {
+        loadOptions: function(_select_element_id, _graph_container) {
+            for (let i = 0; i < _data.questions.length; i++) {
+                let _option = document.createElement("option");
+                _option.value = i;
+                _option.innerHTML = _data.graph_type.single[i].title;
+                document.getElementById(_select_element_id).appendChild(_option);
+            };
+            _graph.single.loadGraph(_graph_container, "0");
+        },
+        loadGraph: function(_graph_container_id, _q_index) {
+            let draw_graph
+            switch (_q_index) {
+                case "0":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Cursos"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 66, "label": "Ciências e Tecnologias"}, {"y": 43, "label": "Humanidades"}, {"y": 21, "label": "Economia"}, {"y": 14, "label": "Artes"}]}]});
+                    draw_graph.render();
+                    break;
+                case "1":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Especificas"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 28, "label": "Química"}, {"y": 36, "label": "Biologia"}, {"y": 32, "label": "Física"}, {"y": 59, "label": "Psicologia B"}, {"y": 42, "label": "Inglês"}, {"y": 32, "label": "Sociologia"}, {"y": 4, "label": "História A"}, {"y": 15, "label": "Geografia C"}, {"y": 14, "label": "Oficina de Artes"}, {"y": 14, "label": "Oficina Multimédia"}, {"y": 12, "label": "Espanhol"}]}]});
+                    draw_graph.render();
+                    break;
+                case "2":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Peso"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Peso"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "+150kg"}, {"y": 0, "label": "120-150kg"}, {"y": 0, "label": "100-120kg"}, {"y": 0, "label": "90-100kg"}, {"y": 6, "label": "85-90kg"}, {"y": 5, "label": "80-85kg"}, {"y": 12, "label": "75-80kg"}, {"y": 16, "label": "70-75kg"}, {"y": 22, "label": "65-70kg"}, {"y": 37, "label": "60-65kg"}, {"y": 18, "label": "55-60kg"}, {"y": 20, "label": "50-55kg"}, {"y": 6, "label": "45-50kg"}, {"y": 2, "label": "40-45kg"}, {"y": 0, "label": "20-40kg"}]}]});
+                    draw_graph.render();
+                    break;
+                case "3":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Altura"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Altura (cm)"}, data: [{type: "column", dataPoints:[{"y": 1, "label": "150"}, {"y": 1, "label": "154"}, {"y": 2, "label": "155"}, {"y": 2, "label": "156"}, {"y": 2, "label": "157"}, {"y": 8, "label": "158"}, {"y": 6, "label": "159"}, {"y": 10, "label": "160"}, {"y": 4, "label": "162"}, {"y": 7, "label": "163"}, {"y": 4, "label": "164"}, {"y": 7, "label": "165"}, {"y": 3, "label": "167"}, {"y": 6, "label": "168"}, {"y": 6, "label": "169"}, {"y": 10, "label": "170"}, {"y": 1, "label": "171"}, {"y": 5, "label": "172"}, {"y": 9, "label": "173"}, {"y": 3, "label": "174"}, {"y": 11, "label": "175"}, {"y": 3, "label": "176"}, {"y": 1, "label": "177"}, {"y": 7, "label": "178"}, {"y": 4, "label": "179"}, {"y": 6, "label": "180"}, {"y": 2, "label": "181"}, {"y": 2, "label": "183"}, {"y": 1, "label": "184"}, {"y": 9, "label": "185"}, {"y": 1, "label": "187"}]}]});
+                    draw_graph.render();
+                    break;
+                case "4":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Sexo"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 81, "label": "Feminino"}, {"y": 63, "label": "Masculino"}]}]});
+                    draw_graph.render();
+                    break;
+                case "5":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Número de Refeições"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Número de Refeições"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "1"}, {"y": 5, "label": "2"}, {"y": 23, "label": "3"}, {"y": 45, "label": "4"}, {"y": 52, "label": "5"}, {"y": 19, "label": "6"}, {"y": 0, "label": "7"}, {"y": 0, "label": "8"}]}]});
+                    draw_graph.render();
+                    break;
+                case "6":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Pequeno Almoço"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 112, "label": "Sim"}, {"y": 17, "label": "Às vezes"}, {"y": 15, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "7":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Pequeno Almoço Saudavél"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 63, "label": "Sim"}, {"y": 60, "label": "Mais ou menos"}, {"y": 6, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "8":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Alimentação de acordo com a Roda dos Alimentos"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 51, "label": "Sim"}, {"y": 82, "label": "Mais ou menos"}, {"y": 11, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "9":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Peças de Fruta Diárias"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Número de Peças de Fruta"}, data: [{type: "column", dataPoints:[{"y": 60, "label": "1"}, {"y": 46, "label": "2"}, {"y": 26, "label": "3"}, {"y": 10, "label": "4"}, {"y": 2, "label": "5"}, {"y": 0, "label": "6"}]}]});
+                    draw_graph.render();
+                    break;
+                case "10":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Porções de Legumes"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Número de Porções de Legumes"}, data: [{type: "column", dataPoints:[{"y": 46, "label": "1"}, {"y": 35, "label": "2"}, {"y": 28, "label": "3"}, {"y": 23, "label": "4"}, {"y": 6, "label": "5"}, {"y": 2, "label": "6"}, {"y": 3, "label": "7"}, {"y": 0, "label": "8"}, {"y": 1, "label": "9"}, {"y": 0, "label": "10"}]}]});
+                    draw_graph.render();
+                    break;
+                case "11":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Pessoas que sabem o consumo calórico recomendado"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 26, "label": "Sim e respeito-o"}, {"y": 15, "label": "Sim mas não o respeito-o"}, {"y": 46, "label": "Mais ou menos"}, {"y": 57, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "12":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Pessoas que consultam um Nutricionista"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 11, "label": "Sim e sigo um plano alimentar"}, {"y": 10, "label": "Sim mas não sigo um plano alimentar rigoroso"}, {"y": 20, "label": "Não mas sigo um plano alimentar"}, {"y": 103, "label": "Não e não sigo qualquer tipo de plano alimentar"}]}]});
+                    draw_graph.render();
+                    break;
+                case "13":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Restrições Alimentares"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 0, "label": "Veganismo"}, {"y": 1, "label": "Vegetarianismo"}, {"y": 143, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "14":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Fast-Food Mensal"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Vezes por mês"}, data: [{type: "column", dataPoints:[{"y": 35, "label": "Raro"}, {"y": 55, "label": "1-2"}, {"y": 48, "label": "3-5"}, {"y": 6, "label": "6-10"}, {"y": 0, "label": "+10"}]}]});
+                    draw_graph.render();
+                    break;
+                case "15":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Praticas Atividade Física?"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 52, "label": "Sim"}, {"y": 92, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "16":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Desporto Praticado"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 1, "label": "Andebol Futsal"}, {"y": 2, "label": "Basquetebol"}, {"y": 2, "label": "Basquetebol Ténis Ténis_de_Mesa"}, {"y": 1, "label": "Bombos"}, {"y": 2, "label": "Ciclismo"}, {"y": 2, "label": "Corrida"}, {"y": 1, "label": "Corrida Caminhada"}, {"y": 1, "label": "Crossfit"}, {"y": 4, "label": "Dança"}, {"y": 1, "label": "Dança, Pilates"}, {"y": 1, "label": "Exercícios_em_casa "}, {"y": 4, "label": "Futebol"}, {"y": 1, "label": "Futebol Bicicleta"}, {"y": 4, "label": "Futsal"}, {"y": 1, "label": "HipHop"}, {"y": 2, "label": "Hóquei_em_Patins"}, {"y": 1, "label": "Hóquei_em_Patins "}, {"y": 1, "label": "Karaté"}, {"y": 4, "label": "KickBoxing"}, {"y": 1, "label": "KickBoxing Muay Thai "}, {"y": 1, "label": "Muay_Thai"}, {"y": 8, "label": "Natação"}, {"y": 1, "label": "Padel Dança"}, {"y": 1, "label": "Pilates"}, {"y": 2, "label": "Polo_Aquático"}, {"y": 1, "label": "Ténis"}, {"y": 1, "label": "Voleibol"}]}]});
+                    draw_graph.render();
+                    break;
+                case "17":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Tipo de Atividade Física"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 36, "label": "Coletivo"}, {"y": 16, "label": "Individual"}]}]});
+                    draw_graph.render();
+                    break;
+                case "18":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Frequencia da Atividade Física"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Vezes por semana"}, data: [{type: "column", dataPoints:[{"y": 10, "label": "1"}, {"y": 14, "label": "2"}, {"y": 13, "label": "3"}, {"y": 7, "label": "4"}, {"y": 4, "label": "5"}, {"y": 2, "label": "6"}, {"y": 2, "label": "7"}]}]});
+                    draw_graph.render();
+                    break;
+                case "19":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Ginásio"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 47, "label": "Sim"}, {"y": 97, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "20":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Frequencia do Ginásio"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Vezes por semana"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "1"}, {"y": 6, "label": "2"}, {"y": 16, "label": "3"}, {"y": 9, "label": "4"}, {"y": 12, "label": "5"}, {"y": 4, "label": "6"}, {"y": 0, "label": "7"}]}]});
+                    draw_graph.render();
+                    break;
+                case "21":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Duração treinos Ginásio"}, axisY: {title: "Número de Pessoas"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "<30min"}, {"y": 12, "label": "30min - 1h"}, {"y": 31, "label": "1h - 2h"}, {"y": 4, "label": ">2h"}]}]});
+                    draw_graph.render();
+                    break;
+                case "22":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Lesões"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 5, "label": "Sim, mais do que uma..."}, {"y": 23, "label": "Sim"}, {"y": 116, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "23":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Intensidade do Exercício físico"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 23, "label": "pouco ou nenhum"}, {"y": 55, "label": "leve 1-3 dias por semana"}, {"y": 47, "label": "de intensidade moderada 3-5 dias por semana"}, {"y": 13, "label": "intenso 6-7 dias por semana"}, {"y": 6, "label": "muito intenso 6-7 dias por semana"}]}]});
+                    draw_graph.render();
+                    break;
+                case "24":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Horas de Sono durante a Semana"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Horas por dia"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "<5h"}, {"y": 11, "label": "5h - 6h"}, {"y": 47, "label": "6h - 7h"}, {"y": 72, "label": "7h - 8h"}, {"y": 13, "label": "8h - 9h"}, {"y": 1, "label": ">9h"}]}]});
+                    draw_graph.render();
+                    break;
+                case "25":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Horas de Sono durante o Fim de Semana"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Horas por dia"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "<5h"}, {"y": 9, "label": "5h - 6h"}, {"y": 5, "label": "6h - 7h"}, {"y": 24, "label": "7h - 8h"}, {"y": 59, "label": "8h - 9h"}, {"y": 38, "label": "9h - 10h"}, {"y": 9, "label": ">10h"}]}]});
+                    draw_graph.render();
+                    break;
+                case "26":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Ecrâs perto da hora de dormir"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 114, "label": "Sim"}, {"y": 26, "label": "Às vezes"}, {"y": 4, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "27":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Ecrâs até adormecer"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 39, "label": "Sim"}, {"y": 27, "label": "Às vezes"}, {"y": 78, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "28":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Comer antes de dormir"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 35, "label": "Sim"}, {"y": 51, "label": "Às vezes"}, {"y": 58, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "29":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Exercício antes de Dormir"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 10, "label": "Sim"}, {"y": 19, "label": "Às vezes"}, {"y": 115, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "30":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Sestas durante o dia"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 23, "label": "Sim"}, {"y": 49, "label": "Às vezes"}, {"y": 72, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "31":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Sono regulado"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 108, "label": "Sim"}, {"y": 30, "label": "Às vezes"}, {"y": 6, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+            }
+        }
+    }
+};

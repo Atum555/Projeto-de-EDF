@@ -1,41 +1,17 @@
-class _Graph {
-    constructor() {
-        this.canvas = _graphCanvas;
+_graph.single.loadOptions(_select_element_id="_single_graph_select", _graph_container="_single_graph_container");
 
-    }
-    render() {
-        // Clear canvas
-        let ctx = this.canvas.getContext("2d");
-        ctx.fillStyle = "white";
-        ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+document.getElementById("_single_graph_select").addEventListener("change", function() {_graph.single.loadGraph(_graph_container="_single_graph_container", _q_index=this.value);});
 
-        // Draw Graph
-        
-    }
-}
-
-function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms));}
-
-let resizeGraphCanvas = () => {
-    _graphCanvas.width = Math.floor(_graphCanvas.parentElement.clientWidth) % 2 ? Math.floor(_graphCanvas.parentElement.clientWidth) - 1 : Math.floor(_graphCanvas.parentElement.clientWidth);
-    _graphCanvas.height = Math.floor(_graphCanvas.parentElement.clientHeight) % 2 ? Math.floor(_graphCanvas.parentElement.clientHeight) -1 : Math.floor(_graphCanvas.parentElement.clientHeight);
-    _graph.render();
-}
-window.onresize = resizeGraphCanvas;
-window.onkeydown = (e) => {
-    switch (e.code) {
-        case "KeyR": _graph.render(); break;
-    }
+let observers = [];
+for (let i=0; i<31; i++) {
+    const element_id = "_single_graph_"+ (i+1).toString().padStart(2, '0');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                _graph.single.loadGraph(element_id, i.toString());
+                observer.disconnect();
+            }
+        });
+    });
+    observer.observe(document.getElementById(element_id));
 };
-window.onload = () => {
-    resizeGraphCanvas();
-    _graph.render();
-};
-
-let _graphCanvas = document.getElementById("graphCanvas");
-let _graph = new _Graph();
-
-
-/* ---INTERACTIONS---
-Redraw   {KeyR}
- */

@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["data.csv", "data.json"],
+            "args": ["data.csv", "_data.json", "_single_graphs.js"],
             "cwd": "${workspaceFolder}/forms_data"
         }
     ]
