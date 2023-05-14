@@ -31,7 +31,7 @@ const _data = {
             },
             {
                 "title": "Peso",
-                "type": "ToDo",
+                "type": "Bar",
                 "options": [
                     "+150kg",
                     "120-150kg",
@@ -48,11 +48,16 @@ const _data = {
                     "45-50kg",
                     "40-45kg",
                     "20-40kg"
-                ]
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Peso"
             },
             {
                 "title": "Altura",
-                "type": "Bar"
+                "type": "Bar",
+                "options": null,
+                "axisY": "Número de Pessoas",
+                "axisX": "Altura (cm)"
             },
             {
                 "title": "Sexo",
@@ -63,8 +68,8 @@ const _data = {
                 ]
             },
             {
-                "title": "ToDo",
-                "type": "ToDo",
+                "title": "Número de Refeições",
+                "type": "Bar",
                 "options": [
                     "1",
                     "2",
@@ -74,11 +79,13 @@ const _data = {
                     "6",
                     "7",
                     "8"
-                ]
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Número de Refeições"
             },
             {
-                "title": "ToDo",
-                "type": "ToDo",
+                "title": "Pequeno Almoço",
+                "type": "Pie",
                 "options": [
                     "Sim",
                     "Às vezes",
@@ -86,8 +93,8 @@ const _data = {
                 ]
             },
             {
-                "title": "ToDo",
-                "type": "ToDo",
+                "title": "Pequeno Almoço Saudavél",
+                "type": "Pie",
                 "options": [
                     "Sim",
                     "Mais ou menos",
@@ -95,8 +102,8 @@ const _data = {
                 ]
             },
             {
-                "title": "ToDo",
-                "type": "ToDo",
+                "title": "Alimentação de acordo com a Roda dos Alimentos",
+                "type": "Pie",
                 "options": [
                     "Sim",
                     "Mais ou menos",
@@ -104,8 +111,8 @@ const _data = {
                 ]
             },
             {
-                "title": "ToDo",
-                "type": "ToDo",
+                "title": "Peças de Fruta Diárias",
+                "type": "Bar",
                 "options": [
                     "1",
                     "2",
@@ -113,11 +120,13 @@ const _data = {
                     "4",
                     "5",
                     "6"
-                ]
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Número de Peças de Fruta"
             },
             {
-                "title": "ToDo",
-                "type": "ToDo",
+                "title": "Porções de Legumes",
+                "type": "Bar",
                 "options": [
                     "1",
                     "2",
@@ -129,11 +138,13 @@ const _data = {
                     "8",
                     "9",
                     "10"
-                ]
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Número de Porções de Legumes"
             },
             {
-                "title": "ToDo",
-                "type": "ToDo",
+                "title": "Pessoas que sabem o consumo calórico recomendado",
+                "type": "Pie",
                 "options": [
                     "Sim e respeito-o",
                     "Sim mas não o respeito-o",
@@ -142,84 +153,209 @@ const _data = {
                 ]
             },
             {
-                "title": "ToDo",
-                "type": "ToDo"
+                "title": "Pessoas que consultam um Nutricionista",
+                "type": "Pie",
+                "options": [
+                    "Sim e sigo um plano alimentar",
+                    "Sim mas não sigo um plano alimentar rigoroso",
+                    "Não mas sigo um plano alimentar",
+                    "Não e não sigo qualquer tipo de plano alimentar"
+                ]
             },
             {
-                "title": "ToDo",
-                "type": "ToDo"
+                "title": "Restrições Alimentares",
+                "type": "Pie",
+                "options": [
+                    "Veganismo",
+                    "Vegetarianismo",
+                    "Não"
+                ]
             },
             {
-                "title": "ToDo",
-                "type": "ToDo"
+                "title": "Fast-Food Mensal",
+                "type": "Bar",
+                "options": [
+                    "Apenas ocasiões expeciais ou nunca.",
+                    "1-2",
+                    "3-5",
+                    "6-10",
+                    "+10"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Vezes por mês"
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Praticas Atividade Física?",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Não"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Desporto Praticado",
+                "type": "Pie",
+                "options": null
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Tipo de Atividade Física",
+                "type": "Pie",
+                "options": [
+                    "Coletivo",
+                    "Individual"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Frequencia da Atividade Física",
+                "type": "Bar",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Vezes por semana"
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Ginásio",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Não"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Frequencia do Ginásio",
+                "type": "Bar",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Vezes por semana"
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Duração treinos Ginásio",
+                "type": "Bar",
+                "options": [
+                    "<30min",
+                    "30min - 1h",
+                    "1h - 2h",
+                    ">2h"
+                ],
+                "axisY": "Número de Pessoas"
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Lesões",
+                "type": "Pie",
+                "options": [
+                    "Sim, mais do que uma...",
+                    "Sim",
+                    "Não"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Intensidade do Exercício físico",
+                "type": "Pie",
+                "options": [
+                    "pouco ou nenhum",
+                    "leve 1-3 dias por semana",
+                    "de intensidade moderada 3-5 dias por semana",
+                    "intenso 6-7 dias por semana",
+                    "muito intenso 6-7 dias por semana"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Horas de Sono durante a Semana",
+                "type": "Bar",
+                "options": [
+                    "<5h",
+                    "5h - 6h",
+                    "6h - 7h",
+                    "7h - 8h",
+                    "8h - 9h",
+                    ">9h"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Horas por dia"
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Horas de Sono durante o Fim de Semana",
+                "type": "Bar",
+                "options": [
+                    "<5h",
+                    "5h - 6h",
+                    "6h - 7h",
+                    "7h - 8h",
+                    "8h - 9h",
+                    "9h - 10h",
+                    ">10h"
+                ],
+                "axisY": "Número de Pessoas",
+                "axisX": "Horas por dia"
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Ecrâs perto da hora de dormir",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Ecrâs até adormecer",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Comer antes de dormir",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Exercício antes de Dormir",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Sestas durante o dia",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
             },
             {
-                "title": "TBM",
-                "type": "TBM"
+                "title": "Sono regulado",
+                "type": "Pie",
+                "options": [
+                    "Sim",
+                    "Às vezes",
+                    "Não"
+                ]
             }
         ]
     },
@@ -5159,52 +5295,146 @@ const _data = {
 
 const _graph = {
     single: {
-        loadOptions: function(_select_element_id) {
+        loadOptions: function(_select_element_id, _graph_container) {
             for (let i = 0; i < _data.questions.length; i++) {
                 let _option = document.createElement("option");
                 _option.value = i;
-                _option.innerHTML = _data.questions[i];
+                _option.innerHTML = _data.graph_type.single[i].title;
                 document.getElementById(_select_element_id).appendChild(_option);
             };
-            _graph.single.loadGraph(_select_element_id, "0");
+            _graph.single.loadGraph(_graph_container, "0");
         },
-        loadGraph: function(_graph_container, _q_index) {
-            console.log(_graph_container, _q_index);
-            return;
+        loadGraph: function(_graph_container_id, _q_index) {
+            let draw_graph
             switch (_q_index) {
-                case "Pie":
-                    _graph = new CanvasJS.Chart("_single_graph_container", {
-                        animationEnabled: true,
-                        theme: "light2",
-                        title:{
-                            text: _dataHandler.getGraphInfo("single", _q_index)["title"]
-                        },
-                        data: [{
-                            type: "doughnut",
-                            startAngle: -90,
-                            //innerRadius: 60,
-                            indexLabelFontSize: 17,
-                            indexLabel: "{label} - #percent%",
-                            toolTipContent: "<b>{label}:</b> {y} (#percent%)",
-                            dataPoints: _dataHandler.getDataPoints("single", _q_index)
-                        }]
-                    });
-                    _graph.render();
+                case "0":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Cursos"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 66, "label": "Ciências e Tecnologias"}, {"y": 43, "label": "Humanidades"}, {"y": 21, "label": "Economia"}, {"y": 14, "label": "Artes"}]}]});
+                    draw_graph.render();
                     break;
-                case "Bar":
-                default:
-                    _graph = new CanvasJS.Chart("_single_graph_container", {
-                        animationEnabled: true,
-                        theme: "light2", // "light1", "light2", "dark1", "dark2"
-                        title:{
-                            text: _dataHandler.getGraphInfo("single", _q_index)["title"]
-                        },
-                        data: [{        
-                            type: "column",  
-                            dataPoints: _dataHandler.getDataPoints("single", _q_index)
-                        }]
-                    });
-                    _graph.render();
+                case "1":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Especificas"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 28, "label": "Química"}, {"y": 36, "label": "Biologia"}, {"y": 32, "label": "Física"}, {"y": 59, "label": "Psicologia B"}, {"y": 42, "label": "Inglês"}, {"y": 32, "label": "Sociologia"}, {"y": 4, "label": "História A"}, {"y": 15, "label": "Geografia C"}, {"y": 14, "label": "Oficina de Artes"}, {"y": 14, "label": "Oficina Multimédia"}, {"y": 12, "label": "Espanhol"}]}]});
+                    draw_graph.render();
+                    break;
+                case "2":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Peso"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Peso"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "+150kg"}, {"y": 0, "label": "120-150kg"}, {"y": 0, "label": "100-120kg"}, {"y": 0, "label": "90-100kg"}, {"y": 6, "label": "85-90kg"}, {"y": 5, "label": "80-85kg"}, {"y": 12, "label": "75-80kg"}, {"y": 16, "label": "70-75kg"}, {"y": 22, "label": "65-70kg"}, {"y": 37, "label": "60-65kg"}, {"y": 18, "label": "55-60kg"}, {"y": 20, "label": "50-55kg"}, {"y": 6, "label": "45-50kg"}, {"y": 2, "label": "40-45kg"}, {"y": 0, "label": "20-40kg"}]}]});
+                    draw_graph.render();
+                    break;
+                case "3":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Altura"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Altura (cm)"}, data: [{type: "column", dataPoints:[{"y": 1, "label": "150"}, {"y": 1, "label": "154"}, {"y": 2, "label": "155"}, {"y": 2, "label": "156"}, {"y": 2, "label": "157"}, {"y": 8, "label": "158"}, {"y": 6, "label": "159"}, {"y": 10, "label": "160"}, {"y": 4, "label": "162"}, {"y": 7, "label": "163"}, {"y": 4, "label": "164"}, {"y": 7, "label": "165"}, {"y": 3, "label": "167"}, {"y": 6, "label": "168"}, {"y": 6, "label": "169"}, {"y": 10, "label": "170"}, {"y": 1, "label": "171"}, {"y": 5, "label": "172"}, {"y": 9, "label": "173"}, {"y": 3, "label": "174"}, {"y": 11, "label": "175"}, {"y": 3, "label": "176"}, {"y": 1, "label": "177"}, {"y": 7, "label": "178"}, {"y": 4, "label": "179"}, {"y": 6, "label": "180"}, {"y": 2, "label": "181"}, {"y": 2, "label": "183"}, {"y": 1, "label": "184"}, {"y": 9, "label": "185"}, {"y": 1, "label": "187"}]}]});
+                    draw_graph.render();
+                    break;
+                case "4":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Sexo"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 81, "label": "Feminino"}, {"y": 63, "label": "Masculino"}]}]});
+                    draw_graph.render();
+                    break;
+                case "5":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Número de Refeições"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Número de Refeições"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "1"}, {"y": 5, "label": "2"}, {"y": 23, "label": "3"}, {"y": 45, "label": "4"}, {"y": 52, "label": "5"}, {"y": 19, "label": "6"}, {"y": 0, "label": "7"}, {"y": 0, "label": "8"}]}]});
+                    draw_graph.render();
+                    break;
+                case "6":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Pequeno Almoço"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 112, "label": "Sim"}, {"y": 17, "label": "Às vezes"}, {"y": 15, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "7":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Pequeno Almoço Saudavél"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 63, "label": "Sim"}, {"y": 60, "label": "Mais ou menos"}, {"y": 6, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "8":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Alimentação de acordo com a Roda dos Alimentos"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 51, "label": "Sim"}, {"y": 82, "label": "Mais ou menos"}, {"y": 11, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "9":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Peças de Fruta Diárias"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Número de Peças de Fruta"}, data: [{type: "column", dataPoints:[{"y": 60, "label": "1"}, {"y": 46, "label": "2"}, {"y": 26, "label": "3"}, {"y": 10, "label": "4"}, {"y": 2, "label": "5"}, {"y": 0, "label": "6"}]}]});
+                    draw_graph.render();
+                    break;
+                case "10":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Porções de Legumes"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Número de Porções de Legumes"}, data: [{type: "column", dataPoints:[{"y": 46, "label": "1"}, {"y": 35, "label": "2"}, {"y": 28, "label": "3"}, {"y": 23, "label": "4"}, {"y": 6, "label": "5"}, {"y": 2, "label": "6"}, {"y": 3, "label": "7"}, {"y": 0, "label": "8"}, {"y": 1, "label": "9"}, {"y": 0, "label": "10"}]}]});
+                    draw_graph.render();
+                    break;
+                case "11":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Pessoas que sabem o consumo calórico recomendado"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 26, "label": "Sim e respeito-o"}, {"y": 15, "label": "Sim mas não o respeito-o"}, {"y": 46, "label": "Mais ou menos"}, {"y": 57, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "12":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Pessoas que consultam um Nutricionista"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 11, "label": "Sim e sigo um plano alimentar"}, {"y": 10, "label": "Sim mas não sigo um plano alimentar rigoroso"}, {"y": 20, "label": "Não mas sigo um plano alimentar"}, {"y": 103, "label": "Não e não sigo qualquer tipo de plano alimentar"}]}]});
+                    draw_graph.render();
+                    break;
+                case "13":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Restrições Alimentares"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 0, "label": "Veganismo"}, {"y": 1, "label": "Vegetarianismo"}, {"y": 143, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "14":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Fast-Food Mensal"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Vezes por mês"}, data: [{type: "column", dataPoints:[{"y": 35, "label": "Raro"}, {"y": 55, "label": "1-2"}, {"y": 48, "label": "3-5"}, {"y": 6, "label": "6-10"}, {"y": 0, "label": "+10"}]}]});
+                    draw_graph.render();
+                    break;
+                case "15":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Praticas Atividade Física?"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 52, "label": "Sim"}, {"y": 92, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "16":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Desporto Praticado"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 1, "label": "Andebol Futsal"}, {"y": 2, "label": "Basquetebol"}, {"y": 2, "label": "Basquetebol Ténis Ténis_de_Mesa"}, {"y": 1, "label": "Bombos"}, {"y": 2, "label": "Ciclismo"}, {"y": 2, "label": "Corrida"}, {"y": 1, "label": "Corrida Caminhada"}, {"y": 1, "label": "Crossfit"}, {"y": 4, "label": "Dança"}, {"y": 1, "label": "Dança, Pilates"}, {"y": 1, "label": "Exercícios_em_casa "}, {"y": 4, "label": "Futebol"}, {"y": 1, "label": "Futebol Bicicleta"}, {"y": 4, "label": "Futsal"}, {"y": 1, "label": "HipHop"}, {"y": 2, "label": "Hóquei_em_Patins"}, {"y": 1, "label": "Hóquei_em_Patins "}, {"y": 1, "label": "Karaté"}, {"y": 4, "label": "KickBoxing"}, {"y": 1, "label": "KickBoxing Muay Thai "}, {"y": 1, "label": "Muay_Thai"}, {"y": 8, "label": "Natação"}, {"y": 1, "label": "Padel Dança"}, {"y": 1, "label": "Pilates"}, {"y": 2, "label": "Polo_Aquático"}, {"y": 1, "label": "Ténis"}, {"y": 1, "label": "Voleibol"}]}]});
+                    draw_graph.render();
+                    break;
+                case "17":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Tipo de Atividade Física"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 36, "label": "Coletivo"}, {"y": 16, "label": "Individual"}]}]});
+                    draw_graph.render();
+                    break;
+                case "18":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Frequencia da Atividade Física"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Vezes por semana"}, data: [{type: "column", dataPoints:[{"y": 10, "label": "1"}, {"y": 14, "label": "2"}, {"y": 13, "label": "3"}, {"y": 7, "label": "4"}, {"y": 4, "label": "5"}, {"y": 2, "label": "6"}, {"y": 2, "label": "7"}]}]});
+                    draw_graph.render();
+                    break;
+                case "19":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Ginásio"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 47, "label": "Sim"}, {"y": 97, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "20":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Frequencia do Ginásio"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Vezes por semana"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "1"}, {"y": 6, "label": "2"}, {"y": 16, "label": "3"}, {"y": 9, "label": "4"}, {"y": 12, "label": "5"}, {"y": 4, "label": "6"}, {"y": 0, "label": "7"}]}]});
+                    draw_graph.render();
+                    break;
+                case "21":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Duração treinos Ginásio"}, axisY: {title: "Número de Pessoas"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "<30min"}, {"y": 12, "label": "30min - 1h"}, {"y": 31, "label": "1h - 2h"}, {"y": 4, "label": ">2h"}]}]});
+                    draw_graph.render();
+                    break;
+                case "22":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Lesões"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 5, "label": "Sim, mais do que uma..."}, {"y": 23, "label": "Sim"}, {"y": 116, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "23":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Intensidade do Exercício físico"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 23, "label": "pouco ou nenhum"}, {"y": 55, "label": "leve 1-3 dias por semana"}, {"y": 47, "label": "de intensidade moderada 3-5 dias por semana"}, {"y": 13, "label": "intenso 6-7 dias por semana"}, {"y": 6, "label": "muito intenso 6-7 dias por semana"}]}]});
+                    draw_graph.render();
+                    break;
+                case "24":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Horas de Sono durante a Semana"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Horas por dia"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "<5h"}, {"y": 11, "label": "5h - 6h"}, {"y": 47, "label": "6h - 7h"}, {"y": 72, "label": "7h - 8h"}, {"y": 13, "label": "8h - 9h"}, {"y": 1, "label": ">9h"}]}]});
+                    draw_graph.render();
+                    break;
+                case "25":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 3000, theme: "light2", title: {text: "Horas de Sono durante o Fim de Semana"}, axisY: {title: "Número de Pessoas"}, axisX: {title: "Horas por dia"}, data: [{type: "column", dataPoints:[{"y": 0, "label": "<5h"}, {"y": 9, "label": "5h - 6h"}, {"y": 5, "label": "6h - 7h"}, {"y": 24, "label": "7h - 8h"}, {"y": 59, "label": "8h - 9h"}, {"y": 38, "label": "9h - 10h"}, {"y": 9, "label": ">10h"}]}]});
+                    draw_graph.render();
+                    break;
+                case "26":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Ecrâs perto da hora de dormir"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 114, "label": "Sim"}, {"y": 26, "label": "Às vezes"}, {"y": 4, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "27":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Ecrâs até adormecer"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 39, "label": "Sim"}, {"y": 27, "label": "Às vezes"}, {"y": 78, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "28":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Comer antes de dormir"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 35, "label": "Sim"}, {"y": 51, "label": "Às vezes"}, {"y": 58, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "29":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Exercício antes de Dormir"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 10, "label": "Sim"}, {"y": 19, "label": "Às vezes"}, {"y": 115, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "30":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Sestas durante o dia"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 23, "label": "Sim"}, {"y": 49, "label": "Às vezes"}, {"y": 72, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
+                case "31":
+                    draw_graph = new CanvasJS.Chart(_graph_container_id, {animationEnabled: true, animationDuration: 500, theme: "light2", title: {text: "Sono regulado"}, data: [{type: "doughnut", startAngle: -90, indexLabelFontSize: 17, indexLabel: "{label} - #percent%", toolTipContent: "<b>{label}:</b> {y} (#percent%)", dataPoints:[{"y": 108, "label": "Sim"}, {"y": 30, "label": "Às vezes"}, {"y": 6, "label": "Não"}]}]});
+                    draw_graph.render();
+                    break;
             }
         }
     }
