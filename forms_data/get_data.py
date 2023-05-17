@@ -2,7 +2,7 @@
 
 import csv
 import json
-import sys
+import sys    
 
 def get_raw_data(csv_file):
     with open(csv_file, 'r') as file:
@@ -39,6 +39,7 @@ def get_data_answers(data_raw):
         data_answers.append(temp)
     return data_answers
 
+# Used for single datapoints of disciplinas
 def count_specifics(id, answers, options):
     data_count = {}
     for i in range(len(options)):
@@ -73,8 +74,9 @@ def get_data_points_single(id, answers, options):
 
         result = []
         for key in sorted(data_count.keys()):
-            result.append({"y": data_count[key], "label": key})
-        return json.dumps(result, ensure_ascii=False)
+            result.append({"y": data_count[key], "name": key, "label": key})
+        #   return json.dumps(result, ensure_ascii=False)
+        return result
     
     if id == 1:
         data_count = count_specifics(id=id, answers=answers, options=options)
@@ -95,8 +97,9 @@ def get_data_points_single(id, answers, options):
     except:
         pass
     for key, value in data_count.items():
-        result.append({"y": value, "label": key})
-    return json.dumps(result, ensure_ascii=False)
+        result.append({"y": value, "name": key, "label": key})
+    #   return json.dumps(result, ensure_ascii=False)
+    return result
 
 def get_functions_single(_data):
     result = ""
@@ -128,7 +131,7 @@ def get_functions_single(_data):
 def main():
     csv_file = sys.argv[1]
     json_file = sys.argv[2]
-    single_functions_file = sys.argv[3]
+    #   single_functions_file = sys.argv[3]
 
     data_raw = get_raw_data(csv_file)
     data_questions = get_data_questions_from_raw(data_raw)
@@ -326,11 +329,18 @@ def main():
         "answers": data_answers
         }
 
+    for i in range(len(obj["graph_type"]["single"])):
+        obj["graph_type"]["single"][i]["dataPoints"] = get_data_points_single(
+            id=i,
+            answers=obj["answers"],
+            options=obj["graph_type"]["single"][i]["options"]
+        )
+
     with open(json_file, 'w') as file:
         json.dump(obj, file, indent=4, ensure_ascii=False)
 
-    with open(single_functions_file, 'w') as file:
-        file.write(get_functions_single(obj))
+    #   with open(single_functions_file, 'w') as file:
+    #       file.write(get_functions_single(obj))
 
 if __name__ == "__main__":
     main()
