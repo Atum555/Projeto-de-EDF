@@ -745,7 +745,6 @@ const _data = {
                     "+10"
                 ],
                 "axisY": "Número de Pessoas",
-                "axisX": "Vezes por mês",
                 "dataPoints": [
                     {
                         "y": 35,
@@ -846,13 +845,13 @@ const _data = {
                     },
                     {
                         "y": 1,
-                        "name": "Dança, Pilates",
-                        "label": "Dança, Pilates"
+                        "name": "Dança Pilates",
+                        "label": "Dança Pilates"
                     },
                     {
                         "y": 1,
-                        "name": "Exercícios_em_casa ",
-                        "label": "Exercícios_em_casa "
+                        "name": "Exercícios_em_casa",
+                        "label": "Exercícios_em_casa"
                     },
                     {
                         "y": 4,
@@ -875,14 +874,9 @@ const _data = {
                         "label": "HipHop"
                     },
                     {
-                        "y": 2,
+                        "y": 3,
                         "name": "Hóquei_em_Patins",
                         "label": "Hóquei_em_Patins"
-                    },
-                    {
-                        "y": 1,
-                        "name": "Hóquei_em_Patins ",
-                        "label": "Hóquei_em_Patins "
                     },
                     {
                         "y": 1,
@@ -896,8 +890,8 @@ const _data = {
                     },
                     {
                         "y": 1,
-                        "name": "KickBoxing Muay Thai ",
-                        "label": "KickBoxing Muay Thai "
+                        "name": "KickBoxing Muay_Thai",
+                        "label": "KickBoxing Muay_Thai"
                     },
                     {
                         "y": 1,
@@ -3083,7 +3077,7 @@ const _data = {
             "Não",
             "3-5",
             "Sim",
-            "Exercícios_em_casa ",
+            "Exercícios_em_casa",
             "Individual",
             "1",
             "Não",
@@ -3185,7 +3179,7 @@ const _data = {
             "Não",
             "3-5",
             "Sim",
-            "Hóquei_em_Patins ",
+            "Hóquei_em_Patins",
             "Coletivo",
             "4",
             "Não",
@@ -3321,7 +3315,7 @@ const _data = {
             "Não",
             "3-5",
             "Sim",
-            "KickBoxing Muay Thai ",
+            "KickBoxing Muay_Thai",
             "Individual",
             "3",
             "Sim",
@@ -6313,7 +6307,7 @@ const _data = {
             "Não",
             "1-2",
             "Sim",
-            "Dança, Pilates",
+            "Dança Pilates",
             "Coletivo",
             "2",
             "Não",
@@ -6395,6 +6389,10 @@ const _graph = {
                         }
                         e.chart.render();
                     
+                    },
+                    fontSize: _graph.calculateLegendSize(_graph_container_id),
+                    margin: {
+                        bottom: 10
                     }
                 },
                 data: [
@@ -6403,7 +6401,7 @@ const _graph = {
                         startAngle: -90,
                         indexLabel: "{label} - #percent%",
 		                toolTipContent: "<b>{label}:</b> {y} (#percent%)",
-                        indexLabelFontSize: 13,
+                        indexLabelFontSize: _graph.calculateLegendSize(_graph_container_id),
                         showInLegend: true,
                         dataPoints: []
                     }
@@ -6415,7 +6413,16 @@ const _graph = {
                 animationDuration: 3000, 
                 theme: "light2", 
                 title: {text: ""}, 
-                axisX: {title: ""}, 
+                axisX: {
+                    title: "",
+                    labelWrap: true,
+                    labelMaxWidth: 100,
+                    labelAngle: 0,
+                    labelFontSize: _graph.calculateLegendSize(_graph_container_id)
+                }, 
+                axisY: {
+                    labelFontSize: _graph.calculateLegendSize(_graph_container_id)
+                },
                 data: [
                     {
                         type: "column", 
@@ -6434,11 +6441,11 @@ const _graph = {
                     Bar.title.text = _data.graph_type.single[_q_index].title;
                     Bar.data[0].dataPoints = _data.graph_type.single[_q_index].dataPoints;
                     if (_data.graph_type.single[_q_index].axisY) { 
-                        Bar.axisY = {};
+                        if (!Bar.axisY) {Bar.axisY = {};}
                         Bar.axisY.title = _data.graph_type.single[_q_index].axisY; 
                     }
                     if (_data.graph_type.single[_q_index].axisX) { 
-                        Bar.axisX = {};
+                        if (!Bar.axisX) {Bar.axisX = {};}
                         Bar.axisX.title = _data.graph_type.single[_q_index].axisX; 
                     }
                     (new CanvasJS.Chart(_graph_container_id, Bar)).render();
@@ -6446,9 +6453,47 @@ const _graph = {
             }
         }
     },
+    calculateLegendSize: function (_graph_container_id) {
+        let chartContainer = document.getElementById(_graph_container_id); // Replace with your graph container's ID
+        let graphWidth = chartContainer.offsetWidth;
+        
+        // Adjust the font size based on the graph width
+        let fontSize = Math.floor(graphWidth / 50); // You can adjust the divisor based on your preference
+        
+        return fontSize;
+    },
     choose: {
         choose: function() {
 
         }
     }
 };
+
+
+(function () {
+    const _dataSportsIndex = 16;
+    let count = {};
+    for (let i = 0; i < _data.answers.length; i++) {
+        const text = _data.answers[i][_dataSportsIndex];
+        if (text=="") {continue;}    
+        text.split(" ")
+            .map((x) => {return x.replaceAll("_", " ")})
+            .forEach((x) => {
+                if (!count[x]) {count[x] = 1;}
+                else {count[x]++;}
+        });
+    }
+    
+    const count_ordered = Object.keys(count).sort().reduce(
+        (obj, key) => { 
+        obj[key] = count[key]; 
+        return obj;
+        }, 
+        {}
+    );
+    const dataPoints = [];
+    Object.keys(count_ordered).forEach((value, i) => {
+        dataPoints.push({y: count_ordered[value], x: i, name: value, label: value});
+    });
+    _data.graph_type.single[16].dataPoints = dataPoints;
+})();

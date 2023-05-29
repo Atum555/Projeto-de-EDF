@@ -226,8 +226,7 @@ def main():
                     "title": "Fast-Food Mensal",
                     "type": "Bar",
                     "options": ["Apenas ocasiões expeciais ou nunca.", "1-2", "3-5", "6-10", "+10"],
-                    "axisY": "Número de Pessoas",
-                    "axisX": "Vezes por mês"
+                    "axisY": "Número de Pessoas"
                 },
                 {
                     "title": "Praticas Atividade Física?",

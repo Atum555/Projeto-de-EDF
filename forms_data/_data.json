@@ -744,7 +744,6 @@
                     "+10"
                 ],
                 "axisY": "Número de Pessoas",
-                "axisX": "Vezes por mês",
                 "dataPoints": [
                     {
                         "y": 35,
@@ -845,13 +844,13 @@
                     },
                     {
                         "y": 1,
-                        "name": "Dança, Pilates",
-                        "label": "Dança, Pilates"
+                        "name": "Dança Pilates",
+                        "label": "Dança Pilates"
                     },
                     {
                         "y": 1,
-                        "name": "Exercícios_em_casa ",
-                        "label": "Exercícios_em_casa "
+                        "name": "Exercícios_em_casa",
+                        "label": "Exercícios_em_casa"
                     },
                     {
                         "y": 4,
@@ -874,14 +873,9 @@
                         "label": "HipHop"
                     },
                     {
-                        "y": 2,
+                        "y": 3,
                         "name": "Hóquei_em_Patins",
                         "label": "Hóquei_em_Patins"
-                    },
-                    {
-                        "y": 1,
-                        "name": "Hóquei_em_Patins ",
-                        "label": "Hóquei_em_Patins "
                     },
                     {
                         "y": 1,
@@ -895,8 +889,8 @@
                     },
                     {
                         "y": 1,
-                        "name": "KickBoxing Muay Thai ",
-                        "label": "KickBoxing Muay Thai "
+                        "name": "KickBoxing Muay_Thai",
+                        "label": "KickBoxing Muay_Thai"
                     },
                     {
                         "y": 1,
@@ -3082,7 +3076,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Exercícios_em_casa ",
+            "Exercícios_em_casa",
             "Individual",
             "1",
             "Não",
@@ -3184,7 +3178,7 @@
             "Não",
             "3-5",
             "Sim",
-            "Hóquei_em_Patins ",
+            "Hóquei_em_Patins",
             "Coletivo",
             "4",
             "Não",
@@ -3320,7 +3314,7 @@
             "Não",
             "3-5",
             "Sim",
-            "KickBoxing Muay Thai ",
+            "KickBoxing Muay_Thai",
             "Individual",
             "3",
             "Sim",
@@ -6312,7 +6306,7 @@
             "Não",
             "1-2",
             "Sim",
-            "Dança, Pilates",
+            "Dança Pilates",
             "Coletivo",
             "2",
             "Não",
