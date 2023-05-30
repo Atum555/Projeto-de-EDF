@@ -1534,13 +1534,89 @@ const _graph = {
         clearSeries() {
             this._series = []
         }
-        getDataPoints(_q1, _q2) {}
+        getDataPoints(data, _q1, _q2) {
+            let dataPoints = []
+            if (_q1 && !_q2) {
+                let count = {}
+                data.forEach(answerSet => {
+                    if (Array.isArray(answerSet[_q1])) {
+                        answerSet[_q1].forEach(option => {
+                            if (count[option]) {
+                                count[option]++
+                            } else {
+                                count[option] = 1
+                            }
+                        })
+                    } else {
+                        if (count[answerSet[_q1]]) {
+                            count[answerSet[_q1]]++
+                        } else {
+                            count[answerSet[_q1]] = 1
+                        }
+                    }
+                })
+                for (let key in count) {
+                    dataPoints.push({
+                        y: count[key],
+                        x: _data.questions_info[_q1].options.indexOf(key),
+                        label: key,
+                        name: key,
+                    })
+                }
+            }
+            return dataPoints
+        }
         render(_options, _q1, _q2) {
             this.clearSeries()
             _options.forEach(option => {
                 this.addSeries(option.title, option.filters)
             })
-            console.log(this._series[0].data)
+            for (let key in _data.questions_info) {
+                if (_data.questions_info[key].title === _q1) {
+                    _q1 = key
+                }
+            }
+            for (let key in _data.questions_info) {
+                if (_data.questions_info[key].title === _q2) {
+                    _q2 = key
+                }
+            }
+
+            // Graph
+            let Bar = {
+                animationEnabled: true,
+                animationDuration: 3000,
+                theme: "light2",
+                title: { text: "" },
+                axisX: {
+                    title: "",
+                    labelWrap: true,
+                    labelMaxWidth: 100,
+                    labelAngle: 0,
+                    labelFontSize: _graph.calculateLegendSize(this._graph_container_id),
+                },
+                axisY: {
+                    labelFontSize: _graph.calculateLegendSize(this._graph_container_id),
+                },
+                data: [],
+            }
+
+            // Question 1 But no Question 2
+            if (_q1 && !_q2) {
+                Bar.title.text = _data.questions_info[_q1].title
+                this._series.forEach(series => {
+                    Bar.data.push({
+                        type: "column",
+                        name: series.title,
+                        showInLegend: true,
+                        dataPoints: this.getDataPoints(series.data, _q1, _q2),
+                    })
+                })
+            }
+
+            // Creat Graph
+            new CanvasJS.Chart(this._graph_container_id, Bar).render()
+            console.log(Bar)
         }
     },
 }
