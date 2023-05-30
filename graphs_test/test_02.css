@@ -2,6 +2,15 @@ body {
     background-color: #ffffff;
 }
 
+
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+
+
 .container {
     position: relative;
     width: 90vmin;
@@ -10,29 +19,21 @@ body {
     transform: translate(-50%);
     margin-bottom: 2em;
 }
+
+
+
 .select_container {
     width: 90vmin;
     margin-bottom: 2em;
 }
-.select_container .filter_line_container{
-    width: 90vmin;
-    margin-bottom: 1em;
-}
-.select_container .filter_line_container .btn{
-    height: 1.5em;
-    margin: 0.5em;
-    border: 1px solid black;
+.select_container select{
     border-radius: 0.5em;
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 0.75em;
-    font-weight: bold;
-    cursor: pointer;
 }
 .select_container .filter_line_containera .btn:hover {
     background-color: #000000;
     color: #ffffff;
 }
+
 .select_container .btn {
     width: 10em;
     height: 2em;
@@ -42,6 +43,23 @@ body {
     background-color: #ffffff;
     color: #000000;
     font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.select_container .filter_line_container{
+    width: 90vmin;
+    margin-bottom: 1em;
+}
+
+.select_container .filter_line_container .btn{
+    height: 1.5em;
+    margin: 0.5em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 0.75em;
     font-weight: bold;
     cursor: pointer;
 }
