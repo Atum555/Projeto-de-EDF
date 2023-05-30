@@ -28,6 +28,7 @@ body {
 }
 .select_container select{
     border-radius: 0.5em;
+    width: 10em;
 }
 .select_container .filter_line_containera .btn:hover {
     background-color: #000000;

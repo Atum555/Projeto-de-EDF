@@ -6473,7 +6473,7 @@ const _graph = {
         clearSeries() {this._series = [];};
         render(_options) {
             this.clearSeries();
-            
+
         };
     }
 };
@@ -6551,7 +6551,10 @@ const _graph = {
         "t",
         "t",
         "t"
-    ]
+    ];
+    const questions_filters = [
+        
+    ];
     _data.questions_info = {};
     _data.questions.forEach((question, i) => {
         _data.questions_info[question] = {
