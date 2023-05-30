@@ -6462,15 +6462,25 @@ const _graph = {
         
         return fontSize;
     },
-    choose: {
-        choose: function() {
-
+    Dinamic: class {
+        constructor(_graph_container_id) {
+            this._graph_container_id = _graph_container_id;
+            this._series = [];
         }
+        addSeries(_title, _options) {
+
+        };
+        clearSeries() {this._series = [];};
+        render(_options) {
+            this.clearSeries();
+            
+        };
     }
 };
 
 
 (function () {
+    // Update _data.graph_type.single["DESPORTO"] with the data from _data.answers
     const _dataSportsIndex = 16;
     let count = {};
     for (let i = 0; i < _data.answers.length; i++) {
@@ -6496,4 +6506,59 @@ const _graph = {
         dataPoints.push({y: count_ordered[value], x: i, name: value, label: value});
     });
     _data.graph_type.single[16].dataPoints = dataPoints;
+})();
+
+(function () {
+    // Get Easy to Work with Data
+    _data.data = [];
+    _data.answers.forEach((answerSet) => {
+        let answerSetFull = {};
+        answerSet.forEach((answer, i) => {
+            answerSetFull[_data.questions[i]] = answer;
+        });
+        _data.data.push(answerSetFull);
+    });
+    const questions_type = [
+        "t",
+        "t",
+        "n",
+        "n",
+        "t",
+        "n",
+        "t",
+        "t",
+        "t",
+        "n",
+        "n",
+        "t",
+        "t",
+        "t",
+        "n",
+        "t",
+        "l",
+        "t",
+        "n",
+        "t",
+        "n",
+        "n",
+        "t",
+        "t",
+        "n",
+        "n",
+        "t",
+        "t",
+        "t",
+        "t",
+        "t",
+        "t"
+    ]
+    _data.questions_info = {};
+    _data.questions.forEach((question, i) => {
+        _data.questions_info[question] = {
+            id: i,
+            title: _data.graph_type.single[i].title,
+            options: _data.graph_type.single[i].options,
+            type: questions_type[i]
+        };
+    });
 })();
