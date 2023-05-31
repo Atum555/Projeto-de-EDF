@@ -1557,7 +1557,8 @@ const _graph = {
                 })
                 for (let key in count) {
                     dataPoints.push({
-                        y: count[key],
+                        abs: count[key],
+                        y: Math.round((count[key] / data.length) * 100),
                         x: _data.questions_info[_q1].options.indexOf(key),
                         label: key,
                         name: key,
@@ -1588,6 +1589,16 @@ const _graph = {
                 animationDuration: 3000,
                 theme: "light2",
                 title: { text: "" },
+                toolTip: {
+                    shared: true,
+                    contentFormatter: function (e) {
+                        let content = ""
+                        for (let i = 0; i < e.entries.length; i++) {
+                            content += `<span style="color:${e.entries[i].dataSeries.color}">` + e.entries[i].dataSeries.name + ":</span> " + e.entries[i].dataPoint.y + "% (" + e.entries[i].dataPoint.abs + ")<br>"
+                        }
+                        return `<h4>${e.entries[0].dataPoint.label}</h4><hr>` + content
+                    },
+                },
                 axisX: {
                     title: "",
                     labelWrap: true,
@@ -1597,6 +1608,8 @@ const _graph = {
                 },
                 axisY: {
                     labelFontSize: _graph.calculateLegendSize(this._graph_container_id),
+                    suffix: "%",
+                    valueFormatString: "##0.",
                 },
                 data: [],
             }
