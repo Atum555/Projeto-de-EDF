@@ -1581,6 +1581,8 @@ const _graph = {
             return dataPoints
         }
         render(_options, _q1, _q2) {
+            console.log(_options)
+            console.log(_q1)
             this.clearSeries()
             _options.forEach(option => {
                 this.addSeries(option.title, option.filters)
