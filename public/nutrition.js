@@ -276,7 +276,7 @@ setTimeout(() => {
             },
         ],
     }).render()
-}, 0)
+}, 1000)
 setTimeout(function () {
     // Get the modal
     let modal = document.getElementById("pop-up-main-container")
@@ -595,4 +595,4 @@ setTimeout(function () {
     span.onclick = function () {
         modal.style.display = "none"
     }
-}, 0)
+}, 1200)
