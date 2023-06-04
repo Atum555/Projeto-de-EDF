@@ -1,0 +1,31 @@
+Nota: Alguns destes gráficos somos capazes de os ter, outros, como disseste são coisas que quero ver por achar que têm sentido, só vendo sabemos se nos interessa.
+
+
+Ideias para gráficos (Hipóteses, duas por tópico): 
+
+Exercício físico: 
+
+1. Desporto | Desporto + Ginásio | Ginásio | Nenhum
+2. Tipo atividade física (Invividual ou coletiva ---> importância do fator social no desporto)
+
+Nutrição:
+
+1. Realação IMC (Peso e altura)
+2. Peças de fruta por dia
+3. Porções de legumes por dia
+
+
+Descanso: 
+
+1. Ecrãs perto da hora de dormir (Sim) | Ecrãs perto da hora de dormir (Às vezes) | Ecrãs perto da hora de dormir (Não)
+2. Ecrãs até adormecer (Sim) | Ecrãs até adormecer (Às vezes) | Ecrãs até adormecer (Não)
+3. Horas de sono por dia (Semana)
+
+
+
+
+Análise (Destaques, 3 gráficos mais complexos):
+	1. Relação alimentação saudável (segue a rodas dos alimentos e/ou peças fruta e/ou porções de legumes) com o facto de ter ou não biologia.
+	2. Correlação intensidade do exercício físico com as horas de sono (exercício mais intenso ---> maior descanso, será que se verifica?)
+	3. Relação nutricionista e consumo de fast-food mensal 
+
