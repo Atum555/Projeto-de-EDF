@@ -1538,9 +1538,14 @@ const _graph = {
             let dataPoints = []
             if (_q1 && !_q2) {
                 let count = {}
+                let total = data.length
                 data.forEach(answerSet => {
                     if (Array.isArray(answerSet[_q1])) {
                         answerSet[_q1].forEach(option => {
+                            if (option == "") {
+                                total--
+                                return
+                            }
                             if (count[option]) {
                                 count[option]++
                             } else {
@@ -1548,6 +1553,10 @@ const _graph = {
                             }
                         })
                     } else {
+                        if (answerSet[_q1] == "") {
+                            total--
+                            return
+                        }
                         if (count[answerSet[_q1]]) {
                             count[answerSet[_q1]]++
                         } else {
@@ -1555,10 +1564,14 @@ const _graph = {
                         }
                     }
                 })
+                if (count[""]) {
+                    total -= count[""]
+                    delete count[""]
+                }
                 for (let key in count) {
                     dataPoints.push({
                         abs: count[key],
-                        y: Math.round((count[key] / data.length) * 100),
+                        y: Math.round((count[key] / total) * 100),
                         x: _data.questions_info[_q1].options.indexOf(key),
                         label: key,
                         name: key,
@@ -1586,7 +1599,7 @@ const _graph = {
             // Graph
             let Bar = {
                 animationEnabled: true,
-                animationDuration: 3000,
+                animationDuration: 2000,
                 theme: "light2",
                 title: { text: "" },
                 toolTip: {
@@ -1596,7 +1609,7 @@ const _graph = {
                         for (let i = 0; i < e.entries.length; i++) {
                             content += `<span style="color:${e.entries[i].dataSeries.color}">` + e.entries[i].dataSeries.name + ":</span> " + e.entries[i].dataPoint.y + "% (" + e.entries[i].dataPoint.abs + ")<br>"
                         }
-                        return `<h4>${e.entries[0].dataPoint.label}</h4><hr>` + content
+                        return `<span style="font-size: 1.2em;">${e.entries[0].dataPoint.label}</span><hr>` + content
                     },
                 },
                 axisX: {
@@ -1610,6 +1623,8 @@ const _graph = {
                     labelFontSize: _graph.calculateLegendSize(this._graph_container_id),
                     suffix: "%",
                     valueFormatString: "##0.",
+                    minimum: 0,
+                    maximum: 100,
                 },
                 data: [],
             }
@@ -1669,7 +1684,7 @@ const _graph = {
     _data.graph_type.single[16].dataPoints = dataPoints
 })()
 ;(function () {
-    // Get Easy to Work with Data
+    // Get Easy to Work with Data (_data.data)
     _data.data = []
     _data.answers.forEach(answerSet => {
         let answerSetFull = {}
@@ -1775,5 +1790,42 @@ const _graph = {
         })
         _data.questions_info["Qual atividade praticas?"].options = options
         _data.questions_info["Qual atividade praticas?"].filters = options
+    }
+    // Implement IMC
+    {
+        //// Get biggest question id
+        let biggest_id = 0
+        Object.keys(_data.questions_info).forEach(question => {
+            if (biggest_id < _data.questions_info[question].id) {
+                biggest_id = _data.questions_info[question].id
+            }
+        })
+        _data.questions_info["IMC"] = {
+            type: "t",
+            title: "IMC",
+            options: ["Abaixo do peso", "Peso normal", "Acima do peso", "Obesidade"],
+            id: biggest_id + 1,
+        }
+        //// Calculate IMC
+        _data.data.forEach(answerSet => {
+            const altura = answerSet["Qual a tua altura em centímetros?"] / 100
+            let answer_peso = answerSet["Seleciona o intervalo que melhor enquadra o teu peso."]
+            // remove last 2 caracteres from string
+            answer_peso = answer_peso.substring(0, answer_peso.length - 2)
+            answer_peso.replaceAll("+", "")
+            answer_peso = answer_peso.split("-")
+            const peso = (parseInt(answer_peso[0]) + parseInt(answer_peso[1])) / 2
+            const imc = peso / (altura * altura)
+            answerSet["IMC"] = ""
+            if (imc < 18.5) {
+                answerSet["IMC"] = "Abaixo do peso"
+            } else if (imc < 25) {
+                answerSet["IMC"] = "Peso normal"
+            } else if (imc < 30) {
+                answerSet["IMC"] = "Acima do peso"
+            } else {
+                answerSet["IMC"] = "Obesidade"
+            }
+        })
     }
 })()
