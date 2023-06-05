@@ -4,32 +4,22 @@ class DataSelector {
         this._graph = new _graph.Dinamic(_dinamic_graph_id)
         this.series = []
         this.question1 = null
-        this.question2 = null
 
         // Add Selects
         let select1 = document.createElement("select")
-        //let select2 = document.createElement("select")
         select1.id = `${this._data_selector_container_id}-select-1`
-        //select2.id = `${this._data_selector_container_id}-select-2`
         select1.options.add(new Option("Pergunta1", null, true, true))
-        //select2.options.add(new Option("Pergunta2", null, true, true))
         Object.keys(_data.questions_info).forEach(key => {
             select1.options.add(new Option(_data.questions_info[key].title, _data.questions_info[key].title, false, false))
-            //select2.options.add(new Option(_data.questions_info[key].title, _data.questions_info[key].title, false, false))
         })
         select1.addEventListener("change", () => {
             this.question1 = select1.value
             this.render()
         })
-        //select2.addEventListener("change", () => {
-        //    this.question2 = select2.value
-        //    this.render()
-        //})
+
         let middle_text = document.createElement("span")
         middle_text.innerText = " X "
         document.getElementById(this._data_selector_container_id).appendChild(select1)
-        //document.getElementById(this._data_selector_container_id).appendChild(middle_text)
-        //document.getElementById(this._data_selector_container_id).appendChild(select2)
 
         // Add Series Button
         let button = document.createElement("button")

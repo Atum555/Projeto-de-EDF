@@ -1534,55 +1534,51 @@ const _graph = {
         clearSeries() {
             this._series = []
         }
-        getDataPoints(data, _q1, _q2) {
+        getDataPoints(data, _q1) {
             let dataPoints = []
-            if (_q1 && !_q2) {
-                let count = {}
-                let total = data.length
-                data.forEach(answerSet => {
-                    if (Array.isArray(answerSet[_q1])) {
-                        answerSet[_q1].forEach(option => {
-                            if (option == "") {
-                                total--
-                                return
-                            }
-                            if (count[option]) {
-                                count[option]++
-                            } else {
-                                count[option] = 1
-                            }
-                        })
-                    } else {
-                        if (answerSet[_q1] == "") {
+            let count = {}
+            let total = data.length
+            data.forEach(answerSet => {
+                if (Array.isArray(answerSet[_q1])) {
+                    answerSet[_q1].forEach(option => {
+                        if (option == "") {
                             total--
                             return
                         }
-                        if (count[answerSet[_q1]]) {
-                            count[answerSet[_q1]]++
+                        if (count[option]) {
+                            count[option]++
                         } else {
-                            count[answerSet[_q1]] = 1
+                            count[option] = 1
                         }
-                    }
-                })
-                if (count[""]) {
-                    total -= count[""]
-                    delete count[""]
-                }
-                for (let key in count) {
-                    dataPoints.push({
-                        abs: count[key],
-                        y: Math.round((count[key] / total) * 100),
-                        x: _data.questions_info[_q1].options.indexOf(key),
-                        label: key,
-                        name: key,
                     })
+                } else {
+                    if (answerSet[_q1] == "") {
+                        total--
+                        return
+                    }
+                    if (count[answerSet[_q1]]) {
+                        count[answerSet[_q1]]++
+                    } else {
+                        count[answerSet[_q1]] = 1
+                    }
                 }
+            })
+            if (count[""]) {
+                total -= count[""]
+                delete count[""]
+            }
+            for (let key in count) {
+                dataPoints.push({
+                    abs: count[key],
+                    y: Math.round((count[key] / total) * 100),
+                    x: _data.questions_info[_q1].options.indexOf(key),
+                    label: key,
+                    name: key,
+                })
             }
             return dataPoints
         }
-        render(_options, _q1, _q2) {
-            console.log(_options)
-            console.log(_q1)
+        render(_options, _q1) {
             this.clearSeries()
             _options.forEach(option => {
                 this.addSeries(option.title, option.filters)
@@ -1590,11 +1586,6 @@ const _graph = {
             for (let key in _data.questions_info) {
                 if (_data.questions_info[key].title === _q1) {
                     _q1 = key
-                }
-            }
-            for (let key in _data.questions_info) {
-                if (_data.questions_info[key].title === _q2) {
-                    _q2 = key
                 }
             }
 
@@ -1617,7 +1608,7 @@ const _graph = {
                 axisX: {
                     title: "",
                     labelWrap: true,
-                    labelMaxWidth: 100,
+                    labelMaxWidth: 85,
                     labelAngle: 0,
                     labelFontSize: _graph.calculateLegendSize(this._graph_container_id),
                 },
@@ -1631,18 +1622,16 @@ const _graph = {
                 data: [],
             }
 
-            // Question 1 But no Question 2
-            if (_q1 && !_q2) {
-                Bar.title.text = _data.questions_info[_q1].title
-                this._series.forEach(series => {
-                    Bar.data.push({
-                        type: "column",
-                        name: series.title,
-                        showInLegend: true,
-                        dataPoints: this.getDataPoints(series.data, _q1, _q2),
-                    })
+            // Question 1
+            Bar.title.text = _data.questions_info[_q1].title
+            this._series.forEach(series => {
+                Bar.data.push({
+                    type: "column",
+                    name: series.title,
+                    showInLegend: true,
+                    dataPoints: this.getDataPoints(series.data, _q1),
                 })
-            }
+            })
 
             // Creat Graph
             new CanvasJS.Chart(this._graph_container_id, Bar).render()
