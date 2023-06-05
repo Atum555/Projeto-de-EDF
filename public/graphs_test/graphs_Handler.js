@@ -1142,7 +1142,7 @@ const _data = {
                 ],
             },
             {
-                title: "Ecrâs até adormecer",
+                title: "Ecrãs até adormecer",
                 type: "Pie",
                 options: ["Sim", "Às vezes", "Não"],
                 dataPoints: [
