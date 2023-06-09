@@ -1,0 +1,152 @@
+/* The Modal (background) */
+.pop-up-main-container {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.pop-up-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.pop-up-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.pop-up-close:hover,
+.pop-up-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .pop-up-content {
+        width: 90%;
+    }
+}
+
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+strong {
+    color: #ffffff;
+}
+
+
+.graph-container {
+    position: relative;
+    width: 90vmin;
+    height: 50vmin;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 2em;
+}
+
+
+
+.select_container {
+    width: 90vmin;
+    margin-bottom: 2em;
+}
+
+.select_container select {
+    border-radius: 0.5em;
+    width: 10em;
+}
+
+.select_container .filter_line_containera .btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.select_container .btn {
+    width: 10em;
+    height: 2em;
+    margin: 0.5em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.select_container .filter_line_container {
+    width: 90vmin;
+    margin-bottom: 1em;
+}
+
+.select_container .filter_line_container .btn {
+    height: 1.5em;
+    margin: 0.5em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 0.75em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.select_container .btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}

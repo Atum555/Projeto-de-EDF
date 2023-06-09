@@ -21,6 +21,10 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
+		<script src="graphs_test/canvasjs.min.js"></script>
+		<script src="graphs_test/graphs_Handler.js"></script>
+		<script src="exercise.js"></script>
+		<link rel="stylesheet" href="exercise.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body class="right-sidebar">
@@ -62,7 +66,7 @@
 										Segundo a Organização Mundial de Saúde (OMS), o conceito de "saúde", mais do que ausência de doenças, representa uma situação de completo bem-estar físico, psíquico e social.
 									</p>
 									<p>
-										A atividade física é muitas vezes associada corretamente à saúde uma bem que apresenta comprovados benefícios nas áreas mencionadas. 
+										A atividade física é muitas vezes associada corretamente à saúde uma vez que apresenta comprovados benefícios nas áreas mencionadas. 
 									</p>
 									<p>
 										De lembrar que durante a pandemia, a atividade física, foi crucial na manutenção da saúde e bem-estar, quer físico quer mental. 
@@ -119,7 +123,7 @@
 											Todos os objetivos mencionados são mera referência. Muitos de nós preferem um desporto que nos permita estar ativos e atingir metas, individuais e/ou coletivas. 
 										</p>
 										<p>
-											Uma modalidade desportiva é o modo mais fácil de nos manter-mos em forma uma vez que estimula vários grupos musculares e potencia as nossas capacidades em diversas áreas. Além disso, é uma excelente forma de conviver e aumentar a nosso autoestima num processo em que nos autopropomos sucessivemente a certas metas que nos melhoram, fisicamente, mentalemnte e socialemnte.
+											Uma modalidade desportiva é o modo mais fácil de nos manter-mos em forma uma vez que estimula vários grupos musculares e potencia as nossas capacidades em diversas áreas. Além disso, é uma excelente forma de conviver e aumentar a nossa autoestima num processo em que nos autopropomos sucessivemente a certas metas que nos melhoram, fisicamente, mentalmente e socialmente.
 										</p>
 									</section>
 									<section>
@@ -127,7 +131,7 @@
 											<h3>3.1. Qual o melhor desporto?</h3>
 										</header>
 										<p>
-											É certo que qualquer praticante irá defender que a sua modalidade é naturalmente a mellor. Outros dirão que, por exemplo, a natação é factualemnte o desporto mais completo. 
+											É certo que qualquer praticante irá defender que a sua modalidade é naturalmente a melhor. Outros dirão que, por exemplo, a natação é factualmente o desporto mais completo. 
 										</p>
 										<p>
 											No entanto, nenhuma destas respostas está necessariamente certa. O melhor desporto ou atividade física é a que se faz e se gosta de fazer! O importante é estarmos ativos e sermos felizes fazendo esse desporto ou atividade física.
@@ -140,38 +144,53 @@
 						
 							<!-- Sidebar -->
 								<section class="box">
-									<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+									<div id="exercise-graph-1-small" style="width: 100%; height: 15em; margin-bottom: 2em;"></div>
+									<hr>
 									<header>
-										<h3>Gráfico y=f(x)</h3>
+										<h3>Desporto por Género</h3>
 									</header>
-									<p>Descrição e análise simples do gráfico</p>
+									<p>A grande maioria dos alunos da ESP não pratica qualquer atividade física e esta tendência acentua-se nas raparigas.</p>
 									<footer>
-										<a href="#" class="button alt">Ver mais gráficos</a>
+										<a class="button alt" id="show-pop-up-1">Ver detalhes</a>
 									</footer>
 								</section>
 								<section class="box">
-									<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+									<div id="exercise-graph-2-small" style="width: 100%; height: 15em; margin-bottom: 2em;"></div>
+									<hr>
 									<header>
-										<h3>Outro Gráfico y=f(x)</h3>
+										<h3>Tipo de Atividade Física por Género</h3>
 									</header>
-									<p>Descrição e análise simples do gráfico</p>
+									<p>Os desportos coletivos são os mais praticados quer por rapazes quer por raparigas.</p>
 									<footer>
-										<a href="#" class="button alt">Ver mais gráficos</a>
+										<a class="button alt" id="show-pop-up-2">Ver detalhes</a>
 									</footer>
 								</section>
 								<section class="box">
 									<header>
 										<h3>Sites úteis</h3>
 									</header>
-									<p>Aqui reúnem-se outros sites que poserão consultar sobre o tema da nutrição:</p>
+									<p>Aqui reúnem-se outros sites que poserão consultar sobre o tema do exercísio físico:</p>
 									<ul class="divided">
-										<li><a href="https://alimentacaosaudavel.dgs.pt/">https://alimentacaosaudavel.dgs.pt/</a></li>
-										<li><a href="https://www.ordemdosnutricionistas.pt/">https://www.ordemdosnutricionistas.pt/</a></li>
-										<li><a href="https://www.apn.org.pt/">https://www.apn.org.pt/</a></li>
+										<li><a href="https://www.sigaoassobio.pt/pt/resultados">https://www.sigaoassobio.pt</a></li>
+										<li><a href="https://www.dgs.pt/pns-e-programas/programas-de-saude-prioritarios/atividade-fisica.aspx">https://www.dgs.pt</a></li>
+										<li><a href="https://comiteolimpicoportugal.pt/formacao-e-desenvolvimento/">https://comiteolimpicoportugal.pt</a></li>
 									</ul>
 								</section>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div id="pop-up-main-container" class="pop-up-main-container">
+				<span class="pop-up-close">&times;</span>
+				<div class="pop-up-content">
+					<div id="pop-up-graph-container-1"></div>
+					<hr>
+					<h2 id="pop-up-title" style="color: #ffffff">
+						</h3>
+						<br>
+						<p id="pop-up-p1" style="color: #ededed"></p>
+						<p id="pop-up-p2" style="color: #ededed"></p>
+						<p id="pop-up-p3" style="color: #ededed"></p>
 				</div>
 			</div>
 	</body>

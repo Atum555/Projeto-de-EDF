@@ -21,6 +21,10 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
+		<script src="graphs_test/canvasjs.min.js"></script>
+		<script src="graphs_test/graphs_Handler.js"></script>
+		<script src="analisys.js"></script>
+		<link rel="stylesheet" href="analysys.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body class="no-sidebar">
@@ -52,67 +56,97 @@
 					<!-- Content -->
 						<article class="box post">
 							<header>
-								<h2>Análise</h2>
-								<p>Hábitos e Práticas Saudáveis</p>
+								<h2>As nossas análises</h2>
+								<p>O que consideramos importante... </p>
 							</header>
 							<p>
-								Neste espaço é possível a qualquer utilizador escolher as variáveis que pretender e construir gráficos donde se podem extrair as mais variadas informações sobre os alunos do 12.º ano da Escola Secundária de Paredes no ano 2022/2023.
+								Reunimos aqui alguns gráficos sobre o que consideramos mais importante.
 							</p>
-							<p>
-								Os dados usados provêm do questionário aplicado no 2.º período do presente ano letivo e que contou com cerca de 150 respostas. Dessa forma, pode-se garantir a fiabilidade dos resultados desta amostra.
-							</p>
-							<p>
-								Literalmente, desfrutem, aprendam e retirem as vossas conclusões. 
-							</p>
-
 						</article>
 						<div class="row">
 							<div class="4u">
 								<section class="box">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<div id="analisys-graph-1-small" style="width: 100%; height: 15em; margin-bottom: 2em;"></div>
+									<hr>
 									<header>
-										<h3>Gráfico 1</h3>
+										<h3>IMC Biologia vs Todos</h3>
 									</header>
-									<p>Explicação sobre o gráfico 1</p>
+									<p>A maioria dos alunos da ESP possui um IMC na zona saudável. Um IMC dito normal ocorre principalemente entre alunos com a
+									disciplina de Biologia.</p>
 									<footer>
-										<a href="#" class="button alt">Ampliar</a>
+										<a class="button alt" id="show-pop-up-1">Ver detalhes</a>
 									</footer>
 								</section>
 							</div>
 							<div class="4u">
 								<section class="box">
-									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<div id="analisys-graph-2-small" style="width: 100%; height: 15em; margin-bottom: 2em;"></div>
+									<hr>
 									<header>
-										<h3>Gráfico 2</h3>
+										<h3>Descanso vs Intensidade de Exercício</h3>
 									</header>
-									<p>Explicação sobre o gráfico 2 </p>
+									<p>Os alunos que praticam exercício físico no desporto e/ou ginásio de forma mais intensa requerem em média um maior n.º de
+									horas de descanso.</p>
 									<footer>
-										<a href="#" class="button alt">Ampliar</a>
+										<a class="button alt" id="show-pop-up-2">Ver detalhes</a>
 									</footer>
 								</section>
 							</div>
 							<div class="4u">
 								<section class="box">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<div id="analisys-graph-3-small" style="width: 100%; height: 15em; margin-bottom: 2em;"></div>
+									<hr>
 									<header>
-										<h3>Gráfico 3</h3>
+										<h3>Distribuição de quem vai ao Ginásio</h3>
 									</header>
-									<p>Explicação sobre o gráfico 3</p>
+									<p>Cerca de 60% dos alunos que frequenta o ginásio não pratica um desporto. Dos alunos que frequentam o ginásio, 61% são
+									rapazes.</p>
 									<footer>
-										<a href="#" class="button alt">Ampliar</a>
+										<a class="button alt" id="show-pop-up-3">Ver detalhes</a>
 									</footer>
 								</section>
 							</div>
 						</div>
 						<article class="box post">
 							<header>
-								<h2>As nossas análises</h2>
-								<p>O que consideramos importante... </p>
+								<h2>Análise</h2>
+								<p>Hábitos e Práticas Saudáveis</p>
 							</header>
 							<p>
-								Reunimos aqui alguns gráficos sobre o que consideramos mais importante. 
+								Neste espaço é possível a qualquer utilizador escolher as variáveis que pretender e construir gráficos donde se
+								podem extrair as mais variadas informações sobre os alunos do 12.º ano da Escola Secundária de Paredes no ano
+								2022/2023.
 							</p>
+							<p>
+								Os dados usados provêm do questionário aplicado no 2.º período do presente ano letivo e que contou com cerca de
+								150 respostas. Dessa forma, pode-se garantir a fiabilidade dos resultados desta amostra.
+							</p>
+							<p>
+								Literalmente, desfrutem, aprendam e retirem as vossas conclusões.
+								<br> 
+								*Nem todos as opções estão disponíveis uma vez que existem incompatibilidades entre tipos de dados a cruzar o que leva a algumas apresentarem pequenos erros ou serem realmente impossíveis de criar*. 
+								<br>
+								**Os gráficos são interativos, ou seja, é possível clicar em cada um dos pontos e ver a informação que lhe está associada**.
+								<br>
+								<a href="Respostas.xlsx" download="Respostas.xlsx">Download Dados Completos Originais</a>
+							</p>
+							<hr>
+							<div id="data-selecter-container" class="select_container"></div>
+							<div id="dinamic-graph" class="graph-container"></div>
 						</article>
+						
+				</div>
+			</div>
+			<div id="pop-up-main-container" class="pop-up-main-container">
+				<span class="pop-up-close">&times;</span>
+				<div class="pop-up-content">
+					<div id="pop-up-graph-container-1" ></div>
+					<hr>
+					<h2 id="pop-up-title" style="color: #ffffff"></h3>
+					<br>
+					<p id="pop-up-p1" style="color: #ededed"></p>
+					<p id="pop-up-p2" style="color: #ededed"></p>
+					<p id="pop-up-p3" style="color: #ededed"></p>
 				</div>
 			</div>
 	</body>

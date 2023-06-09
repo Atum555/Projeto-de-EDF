@@ -293,7 +293,7 @@ def main():
                     "axisX": "Horas por dia"
                 },
                 {
-                    "title": "Ecrâs perto da hora de dormir",
+                    "title": "Ecrãs perto da hora de dormir",
                     "type": "Pie",
                     "options": ["Sim", "Às vezes", "Não"]
                 },

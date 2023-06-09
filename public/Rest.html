@@ -21,6 +21,10 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
+		<script src="graphs_test/canvasjs.min.js"></script>
+		<script src="graphs_test/graphs_Handler.js"></script>
+		<script src="rest.js"></script>
+		<link rel="stylesheet" href="rest.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body class="right-sidebar">
@@ -67,7 +71,7 @@
 											<p>Uma explicação simplificada...</p>
 										</header>
 										<p>
-											Quando dormimos, o nosso corpo entra em diversas fases cujo objetivo é recuperar a energia gasta durante o dia e, consequentemente, a nossa vitalidade. Mais ainda, o descanso é muito importante para os desportistas uma vez que é durante o descanso que são produzidas novas células que fortalecem as fibras musculares danificadas durante o dia, permitindo fortalecimento da musculatura e a consequente evolução do atleta. O corpo produz ainda células importantes para o aparelho circulatório e estão comprovados efeitos ao nível do sistema nervoso e imunológico. 
+											Quando dormimos, o nosso corpo entra em diversas fases cujo objetivo é recuperar a energia gasta durante o dia e, consequentemente, a nossa vitalidade. Mais ainda, o descanso é muito importante para os desportistas uma vez que é durante o descanso que são produzidas novas células que fortalecem as fibras musculares danificadas durante o dia, permitindo o fortalecimento da musculatura e a consequente evolução do atleta. O corpo produz ainda células importantes para o aparelho circulatório e estão comprovados efeitos ao nível do sistema nervoso e imunológico. 
 										</p>
 										<p>
 											De uma forma simplificada e indireta, o descanso previne doenças, melhora as nossas capacidades, físicas e mentais, e é responsável por adquirirmos a alegria de viver e o entusiasmo.
@@ -82,7 +86,7 @@
 										</p>
 										<p>
 											<ul>
-												<li>•	Bem-estar gera;</li>
+												<li>•	Bem-estar geral;</li>
 												<li>•	Melhor capacidade intelectual e laboral;</li>
 												<li>•	Melhor concentração;</li>
 												<li>•	Redução do stress;</li>
@@ -126,38 +130,53 @@
 						
 							<!-- Sidebar -->
 								<section class="box">
-									<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+									<div id="rest-graph-1-small" style="width: 100%; height: 15em; margin-bottom: 2em;"></div>
+									<hr>
 									<header>
-										<h3>Gráfico y=f(x)</h3>
+										<h3>Horas de Sono dos Cursos</h3>
 									</header>
-									<p>Descrição e análise simples do gráfico</p>
+									<p>De uma forma geral, os alunos dormem em média menos que as 8h diárias recomendadas. Os piores hábitos de descanso são encontrados entre os alunos de Ciências.</p>
 									<footer>
-										<a href="#" class="button alt">Ver mais gráficos</a>
+										<a class="button alt" id="show-pop-up-1">Ver detalhes</a>
 									</footer>
 								</section>
 								<section class="box">
-									<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+									<div id="rest-graph-2-small" style="width: 100%; height: 15em; margin-bottom: 2em;"></div>
+									<hr>
 									<header>
-										<h3>Outro Gráfico y=f(x)</h3>
+										<h3>Ecrãs na Hora de Dormir</h3>
 									</header>
-									<p>Descrição e análise simples do gráfico</p>
+									<p>Quase metade dos alunos adormece sempre ou na maioria das vezes enquanto assiste televisão ou no telemóvel.</p>
 									<footer>
-										<a href="#" class="button alt">Ver mais gráficos</a>
+										<a class="button alt" id="show-pop-up-2">Ver detalhes</a>
 									</footer>
 								</section>
 								<section class="box">
 									<header>
 										<h3>Sites úteis</h3>
 									</header>
-									<p>Aqui reúnem-se outros sites que poserão consultar sobre o tema da nutrição:</p>
+									<p>Aqui reúnem-se outros sites que poderão consultar sobre o tema do descanso:</p>
 									<ul class="divided">
-										<li><a href="https://www.sleepfoundation.org/">https://www.sleepfoundation.org/</a></li>
-										<li><a href="https://www.sono.pt//">https://www.sono.pt/</a></li>
-										<li><a href="https://sleepcouncil.org.uk/">https://sleepcouncil.org.uk/</a></li>
+										<li><a href="https://www.sleepfoundation.org/">https://www.sleepfoundation.org</a></li>
+										<li><a href="https://www.sono.pt/">https://www.sono.pt</a></li>
+										<li><a href="https://sleepcouncil.org.uk/">https://sleepcouncil.org.uk</a></li>
 									</ul>
 								</section>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div id="pop-up-main-container" class="pop-up-main-container">
+				<span class="pop-up-close">&times;</span>
+				<div class="pop-up-content">
+					<div id="pop-up-graph-container-1"></div>
+					<hr>
+					<h2 id="pop-up-title" style="color: #ffffff">
+						</h3>
+						<br>
+						<p id="pop-up-p1" style="color: #ededed"></p>
+						<p id="pop-up-p2" style="color: #ededed"></p>
+						<p id="pop-up-p3" style="color: #ededed"></p>
 				</div>
 			</div>
 	</body>
